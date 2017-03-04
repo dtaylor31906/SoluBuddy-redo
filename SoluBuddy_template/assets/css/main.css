@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800");
 @import url("font-awesome.min.css");
 
-
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, content, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -13,7 +12,7 @@
 		vertical-align: baseline;
 	}
 
-	article, aside, details, figcaption, figure, footer, header, content, hgroup, menu, nav, section {
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
 
@@ -1203,14 +1202,6 @@
 		margin: 0 0 2em 0;
 	}
 
-	content {
-		margin: 0 0 2em 0;
-	}
-
-	content h2, content h3 {
-		margin: 0 0 0.25em 0;
-	}
-
 		header h2, header h3 {
 			margin: 0 0 0.25em 0;
 		}
@@ -1225,22 +1216,7 @@
 			margin: 0;
 		}
 
-		content p {
-			display: block;
-			text-transform: uppercase;
-			font-weight: 700;
-			letter-spacing: 0.065em;
-			font-size: 0.9em;
-			color: #696969;
-			margin: 0;
-		}
-
 			header p strong {
-				color: #404248;
-				font-weight: 800;
-			}
-
-			content p strong {
 				color: #404248;
 				font-weight: 800;
 			}
@@ -1270,28 +1246,6 @@
 			position: relative;
 			top: -1em;
 		}
-
-		content.major {
-			border-bottom: solid 1px #dbdbdb;
-			margin: 0 0 3em 0;
-		}
-
-			content.major:after {
-				content: '';
-				display: block;
-				border-top: solid 1px #dbdbdb;
-				height: 8px;
-			}
-
-			content.major h2, content.major h3 {
-				margin: 0 0 1.2em 0;
-			}
-
-			content.major p {
-				margin: 0 0 1.5em 0;
-				position: relative;
-				top: -1em;
-			}
 
 /* Forms */
 
@@ -1628,10 +1582,6 @@
 			margin: 0 0 1em 0;
 		}
 
-		.box.excerpt content {
-			margin: 0 0 1em 0;
-		}
-
 		.box.excerpt .image, .box.excerpt p {
 			margin-bottom: 0;
 		}
@@ -1669,36 +1619,6 @@
 				opacity: 0.5;
 				bottom: -4px;
 			}
-
-			.box.feature1 content.first h2 {
-				font-size: 2.5em;
-			}
-
-			.box.feature1 content.first p {
-				font-size: 1.2em;
-			}
-
-			.box.feature1 content.second {
-				position: relative;
-				display: inline-block;
-				text-align: left;
-				margin: 0 auto;
-				white-space: nowrap;
-				left: 24px;
-			}
-
-				.box.feature1 content.second p {
-					line-height: 1em;
-				}
-
-				.box.feature1 content.second:before {
-					font-size: 48px;
-					position: absolute;
-					right: 100%;
-					margin-right: 18px;
-					opacity: 0.5;
-					bottom: -4px;
-				}
 
 	.box.feature2 {
 		text-align: center;
@@ -1843,12 +1763,6 @@
 		margin-bottom: 0;
 	}
 
-/* Content */
-
-	#content{
-		margin-bottom: 0;
-	}
-
 /* Footer */
 
 	#footer {
@@ -1969,22 +1883,22 @@
 					color: #fff;
 				}
 
-				/* Content */
+				/* Main Content */
 
-					#content {
+					#main-content {
 						position: relative;
 						border-radius: 10px;
 						background: rgba(255, 255, 255, 0.1);
 						padding: 0.75em;
 					}
 
-						#content .inner {
+						#main-content .inner {
 							background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), url("images/bg02.png");
 							background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), url("images/bg02.png");
 							background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), url("images/bg02.png");
 							background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)), url("images/bg02.png");
 							position: relative;
-							height: 25em;
+							height: 30em;
 							background-color: #3B3E45;
 							background-color: rgba(59, 62, 69, 0.9);
 							border-radius: 8px;
@@ -1992,7 +1906,7 @@
 							text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
 						}
 
-						#content h1 {
+						#main-content h1 {
 							position: absolute;
 							left: 1.75em;
 							top: 50%;
@@ -2081,7 +1995,6 @@
 
 			#banner {
 				width: 940px;
-				height: 10px;
 				margin: 0 auto;
 				overflow: hidden;
 				padding: 9em 0 6em 0;
@@ -2137,7 +2050,6 @@
 
 			#banner {
 				width: 940px;
-				width: 10px;
 				padding: 3em 0 0 0;
 			}
 
@@ -2233,10 +2145,6 @@
 			}
 
 			.box.excerpt header {
-				margin-left: 32%;
-			}
-
-			.box.excerpt content {
 				margin-left: 32%;
 			}
 
@@ -2458,12 +2366,6 @@
 			#header, #nav {
 				display: none;
 			}
-
-		/* Content */
-
-		#content {
-			display:block;
-		}
 
 		/* Banner */
 
