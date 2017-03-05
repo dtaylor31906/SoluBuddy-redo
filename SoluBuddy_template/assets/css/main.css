@@ -1812,7 +1812,7 @@
 		border-color: rgba(255, 255, 255, 0.075);
 		text-align: center;
 		margin-top: 2em;
-		padding: 3em 0 4em 0;
+		padding: 2em 0 2em 0;
 		color: inherit;
 	}
 
@@ -1840,15 +1840,15 @@
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 3em 0;
+				padding: 2em 0;
 			}
 
 			.wrapper {
-				padding: 7em 0 7em 0;
+				padding: 2em 0 2em 0;
 			}
 
 			#footer-wrapper {
-				padding: 7em 0 7em 0;
+				padding: 4em 0 4em 0;
 			}
 
 		/* Header */
