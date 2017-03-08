@@ -51,18 +51,18 @@
 								<form id = "GravForm" action = "" method = "post">
 								<table class="solutions">
 										<tr>
-											<td><label for="solvent">Solvent Formula:</label><input type ="text" name="solvent" placeholder="Solvent Formula"></td>
-											<td><label for="solute">Solute Formula:</label><input type ="text" name="solute" placeholder="Solute Formula"></td>
-											<td><label for="molecular_weight">Solute Molecular Weight:</label><input type ="number" name="molecular_weight" placeholder="Solute Molecular Weight"></td>
+											<td><label for="solvent">Solvent Name:</label><input type ="text" name="solvent" id="solvent" placeholder="Solvent Name"></td>
+											<td><label for="solute">Solute Formula:</label><input type ="text" name="solute" id="solute" placeholder="e.g. H20 or HCl"></td>
+											<td><label for="molecular_weight">Solute Molecular Weight:</label><input type ="number" name="molecular_weight" id="molecular_weight" placeholder="Solute Molecular Weight"></td>
 										</tr>
 											<tr>
-											<td><label for="sol_volume">Solution Volume:</label><input type ="number" name="sol_volume" placeholder="Solution Total Volume"></td>
-											<td><label for="soln_concentration">Solution Concentration (mol/L):</label><input type="number" name="soln_concentration" placeholder="Solution Concentration (mol/L)"></td>
-											<td><label for="mass_solute_added">Mass of Solute to Add</label><input type ="number" name="mass_solute_added" placeholder="Mass of Solute to Add"></td>
+											<td><label for="sol_volume">Solution Volume:</label><input type ="number" name="sol_volume" id="sol_volume" placeholder="Desired Volume of Solution"></td>
+											<td><label for="soln_concentration">Solution Concentration (mol/L):</label><input type="number" name="soln_concentration" id="soln_concentration" placeholder="Desired Concentration of Solution (mol/L)"></td>
+											<td><label for="mass_solute_added">Mass of Solute to Add</label><input type ="number" name="mass_solute_added" id="mass_solute_added" placeholder="Mass of Solute to Add"></td>
 										</tr>
 									</table>
-									</div>
-								</div>
+							</div>
+						</div>
 								<div class="row">
 									<div class="12u">
 										<input type="submit" name="btn_next" value ="Calculate"/>
