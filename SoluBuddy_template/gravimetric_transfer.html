@@ -43,41 +43,33 @@
 				<div class="inner">
 
 					<!-- Feature 1 -->
-					<table>
-											<th> Gravimetric Transfer </th>
-											<form id = "GravForm" action = "" method = "post">
-												<tr>
-													<td style="text-align:center"> Solvent Formula : <input type = "text" name = "solvent" value = "Solvent Formula"></td>
-												</tr>
-												
-												<tr>
-													<td style="text-align:center">Solute Formula : <input type = "text" name = "solute" value = "Solvent Formula"></td>
-												</tr>
-												
-												<tr>
-													<td style="text-align:center">Solute Molecular Weight : <input type = "text" name = "molecular_weight" value = "Solute Molecular Weight"></td>
-												</tr>
-												
-												<tr>
-													<td style="text-align:center"><select id = "volume"> <option value="none"></option><option value="liter">L</option> <option value="microliter">uL</option> </select> Solution Total Volume : <input type = "text" name = "solute_total_volume" value = "Solution Total Volume (mL)"></td>
-												</tr> 
-												
-												<tr>
-													<td style="text-align:center">Solution Concentration : <input type = "text" name = "soln_concentration" value = "Solution Concentration (mol/L)"></td>
-												</tr>
-												
-												<tr>
-													<td style="text-align:center"><select id = "mass"> <option value="none"></option><option value="kilogram">kg</option> <option value="milligram">mg</option> <option value="microgram">ug</option> </select> Mass of Solute to Add : <input type = "text" name = "mass_solute_added" value = "Mass of Solute to Add"></td>
-												</tr>
-															
-															<br>
-												
-												<tr>
-														<td style="text-align:center"><input type = "submit" name = "btn_next" value = "Next"></td>
-												</tr>
-												
-											</form>
-										</table>
+					<section class="container box feature1">
+						<div class="row">
+							<div class="12u">
+
+								<h2>Gravimetric Transfers</h2>
+								<form id = "GravForm" action = "" method = "post">
+								<table class="solutions">
+										<tr>
+											<td><label for="solvent">Solvent Formula:</label><input type ="text" name="solvent" placeholder="Solvent Formula"></td>
+											<td><label for="solute">Solute Formula:</label><input type ="text" name="solute" placeholder="Solute Formula"></td>
+											<td><label for="molecular_weight">Solute Molecular Weight:</label><input type ="number" name="molecular_weight" placeholder="Solute Molecular Weight"></td>
+										</tr>
+											<tr>
+											<td><label for="sol_volume">Solution Volume:</label><input type ="number" name="sol_volume" placeholder="Solution Total Volume"></td>
+											<td><label for="soln_concentration">Solution Concentration (mol/L):</label><input type="number" name="soln_concentration" placeholder="Solution Concentration (mol/L)"></td>
+											<td><label for="mass_solute_added">Mass of Solute to Add</label><input type ="number" name="mass_solute_added" placeholder="Mass of Solute to Add"></td>
+										</tr>
+									</table>
+									</div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<input type="submit" name="btn_next" value ="Calculate"/>
+							</form>
+							</div>
+						</div>
+					</section>
 
 				</div>
 			</div>
