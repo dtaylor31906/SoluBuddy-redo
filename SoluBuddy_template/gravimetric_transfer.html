@@ -26,6 +26,7 @@
 						<!-- Nav -->
 						<nav id="nav">
 							<ul>
+								<li class="current_page_item"><a href="index.html">Home</a></li>
 								<li><a href="educational-links.html">Educational Links</a></li>
 								<li><a href="saved-solutions.html">Saved Solutions</a></li>
 								<li><a href="#">Account</a></li>
@@ -44,61 +45,83 @@
 
 					<!-- Feature 1 -->
 					<section class="container box feature1">
-						<div class="row">
-							<div class="12u">
-
-								<h2>Gravimetric Transfers</h2>
-								<form id = "GravForm" action = "" method = "post">
-								<table class="solutions">
-										<tr>
-											<td><label for="solvent">Solvent Formula:</label><input type ="text" name="solvent" placeholder="Solvent Formula"/></td>
-											<td><label for="solute">Solute Formula:</label><input type ="text" name="solute" placeholder="Solute Formula"/></td>
-											<td><label for="molecular_weight">Molecular Weight:</label><input type ="number" name="molecular_weight" placeholder="Solute Molecular Weight"/></td>
-										</tr>
-											<tr>
-											<td><label for="sol_volume">Solution Volume:</label><input type="number" name="sol_volume" placeholder="Solution Total Volume"><select><option value="mL" selected>mL</option><option value="liters">L</option></td>
-											<td><label for="soln_concentration">Concentration (mol/L):</label><input type="number" name="soln_concentration" placeholder="Solution Concentration (mol/L)"/></td>
-											<td><label for="mass_solute_added">Mass of Solute</label><input type ="number" name="mass_solute_added" placeholder="Mass of Solute to Add"/></td>
-										</tr>
-									</table>
-									</div>
+						<form id = "GravForm" action = "" method = "post">
+							<div class="row">
+								<div class="12u">
+									<h2>Gravimetric Transfers</h2>
 								</div>
-								<div class="row">
-									<div class="12u">
-										<input type="submit" name="btn_next" value ="Calculate"/>
-							</form>
 							</div>
-						</div>
-					</section>
 
-				</div>
-			</div>
-		</div>
+							<table>
+								<tr>
+									<td class="field"><label for="solvent">Solvent Name:</label><input type ="text" name="solvent" id="solvent" placeholder="Solvent Name"/></td>
+									<td class="db"></td>
+									<td class="field"><label for="solute">Solute Formula:</label><input type ="text" name="solute" id="solute" placeholder="e.g. H20 or HCl"/></td>
+									<td class="db"></td>
+									<td class="field"><label for="molecular_weight">Solute Molecular Weight:</label><input type ="number" name="molecular_weight" id="molecular_weight" placeholder="Solute Molecular Weight"/></td>
+									<td class="db"></td>
+								</tr>
+								<tr>
+									<td class="error"></td>
+									<td class="db"></td>
+									<td class="error"><p>error</p></td>
+									<td class="db"></td>
+									<td class="error"></td>
+									<td class="db"></td>
+								</tr>
+								<tr>
+									<td class="field"><label for="sol_volume">Solution Volume:</label><input type ="number" name="sol_volume" id="sol_volume" placeholder="Desired Volume of Solution"/></td>
+									<td class="db"><label>&nbsp;</label><select><option value="mL" selected>mL</option><option value="L">L</option></select></td>
+									<td class="field"><label for="soln_concentration">Solution Concentration (mol/L):</label><input type="number" name="soln_concentration" id="soln_concentration" placeholder="Desired Concentration of Solution (mol/L)"/></td>
+									<td class="db"><label>&nbsp;</label><select><option value="mL" selected>mL</option><option value="L">L</option></select></td>
+									<td class="field"><label for="mass_solute_added">Mass of Solute to Add</label><input type ="number" name="mass_solute_added" id="mass_solute_added" placeholder="Mass of Solute to Add"/></td>
+									<td class="db"><label>&nbsp;</label><select><option value="mL" selected>mL</option><option value="L">L</option></select></td>
+								</tr>
+								<tr>
+									<td class="error"><p>error</p></td>
+									<td class="db"></td>
+									<td class="error"></td>
+									<td class="db"></td>
+									<td class="error"><p>error</p></td>
+									<td class="db"></td>
+								</tr>
+								<tr>
+									<td colspan="2" class="frm_btns"><input type="reset" name="btn_reset" value="Reset"/></td>
+									<td colspan="2"></td>
+									<td colspan="2" class="frm_btns"><input type="submit" name="btn_next" value ="Calculate"/></td>
+								</table>
 
-		<!-- Footer Wrapper -->
+							</form>
+						</section>
 
-		<footer id="footer" class="container">
-			<div class="row">
-				<div class="12u">
-					<div id="copyright">
-						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
 					</div>
 				</div>
 			</div>
-		</footer>
-	</div>
 
-	<!-- Scripts -->
+			<!-- Footer Wrapper -->
 
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/skel-viewport.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
+			<footer id="footer" class="container">
+				<div class="row">
+					<div class="12u">
+						<div id="copyright">
+							<ul class="menu">
+								<li>&copy; Dr David Kreller. All rights reserved</li><li>Design: <a href="http://ceit.georgiasouthern.edu/cs/">Georgia Southern University Computer Science</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
 
-</body>
-</html>
+		<!-- Scripts -->
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/skel-viewport.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+
+	</body>
+	</html>

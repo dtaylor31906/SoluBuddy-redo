@@ -1255,9 +1255,7 @@
 		text-transform: uppercase;
 		font-weight: 800;
 		letter-spacing: 0.04em;
-		white-space: nowrap;
-		overflow: hidden;
-		padding-top: 2em;
+		padding-top: 0.5em;
 		color: #000000;
 		text-align: left;
 		margin: 0;
@@ -1272,8 +1270,7 @@
 	form textarea {
 		-webkit-appearance: none;
 		display: block;
-		position:static;
-		width: 80%;
+		width: 100%;
 		border-radius: 8px;
 		border: solid 2px #4091bf;
 	}
@@ -1299,8 +1296,6 @@
 		line-height: 3em;
 		padding: 0 1em;
 		-webkit-appearance: none;
-		display: inline-block;
-		width: 15%;
 		border-radius: 8px;
 		border: solid 2px #4091bf;
 	}
@@ -1326,38 +1321,35 @@
 
 	table {
 		width: 100%;
+		table-layout: auto;
 	}
 
-		table.default {
-			width: 100%;
-		}
+	table p {
+		color:red;
+		text-align: center;
+	}
 
-			table.default tr {
-				border-top: solid 1px #eee;
-			}
+	td.frm_btns {
+		padding-top: 2em;
+	}
 
-				table.default tr:first-child {
-					border-top: 0;
-				}
+	td.error {
+		text-align: center;
+		height: auto;
+		color: red;
+	}
 
-			table.default td {
-				padding: 0.5em 1em 0.5em 1em;
-			}
+	td.field {
+		height: auto;
+		width: auto;
+		padding-left: 2em;
+	}
 
-			table.default th {
-				text-align: left;
-				padding: 0.5em 1em 0.5em 1em;
-				text-transform: uppercase;
-				font-weight: 800;
-				letter-spacing: 0.04em;
-				margin: 0 0 1em 0;
-				font-size: 0.8em;
-			}
-
-			table.default thead {
-				background: #404248;
-				color: #fff;
-			}
+	td.db {
+		height: auto;
+		width: auto;
+		border-left: -2em;
+	}
 
 /* Image */
 
@@ -1728,9 +1720,14 @@
 /* Wrappers */
 
 	#header-wrapper {
-		background: url("images/bg01.png"), url("../../images/header.jpg");
-		background-position: top left, center center;
-		background-size: auto, cover;
+		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg02.png");
+		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg02.png");
+		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg02.png");
+		background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg02.png");
+		position: relative;
+		background-repeat: repeat-x, no-repeat, repeat;
+		background-size: 100% 100%, 100% 15em, auto auto;
+		background-position: top left, top center, top left;
 	}
 
 	#main-wrapper {
