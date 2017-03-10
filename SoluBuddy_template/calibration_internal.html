@@ -49,35 +49,34 @@
 						<div id="content">
 							<div id="main-content">
 								<div class="inner">
-									<div>
-										
-										<table>
-											<th> Calibration Standards - Internal Standards Method </th>
-											<form action = "get">
-												<tr>
-													<td>Enter the Analyte Name : <input type = "text" name = "analyte_name" value = "Analyte Name"></td>
-													<td>Enter the Molarity of the Analyte (M) : <input type = "text" name = "analyte_molarity" value = "Molarity of Analyte Solution"></td>
-													<td>Enter the number of Flasks : <input type = "text" name = "num_flasks" value = "Number of Internal Standards"></td>
-												</tr>
-															<br>
-												
-												<tr>
-													<td>Enter the Internal Standard Name: <input type = "text" name = "standard_name" value = "Internal Standard Name"></td>
-													<td>Enter the Molarity of Internal Standard: <input type = "text" name = "analyte_molarity" value = "Molarity of Internal Standard"></td>
-													<td>Enter the total Volume of all flasks (mL): <input type = "text" name = "total_volume" value = "Volume of Calibration Flasks"></td>
-												</tr>
+								
+								<section class="container box feature1">
+										<div class="row">
+											<div class="12u">
+												<h2>Calibration - Internal Method</h2>
+												<form id = "CalibrationExternal" action = "" method = "post">
+												<table class="solutions">
+														<tr>
 															
-															<br>
-												
-												<tr>
-														<td><input type = "submit" name = "btn_next" value = "Next"></td>
-												</tr>
-												
+															<td><label for="analyte">Enter the Analyte Name : </label><input type ="text" name="analyte" placeholder="Analyte Name"></td>
+															<td><label for="analyte_molarity">Enter the Molarity of the Analyte (M) :</label><input type ="text" name="analyte_molarity" placeholder="Analyte Molarity"></td>
+															<td><label for="num_flask">Enter the number of Flasks : </label><input type ="number" name="num_flasks" placeholder="Total Number of Flasks"></td>
+														</tr>
+														<tr>
+															<td><label for="standard_name">Enter the Internal Standard Name: </label> <input type = "text" name = "standard_name" placeholder = "Internal Standard Name"></td>
+															<td><label for="num_standards">Enter the Molarity of Internal Standard: </label><input type = "text" name = "analyte_molarity" placeholder = "Molarity of Internal Standard"></td>
+															<td><label for="flask_total_volume">Enter the total Volume of all flasks (mL): </label><input type ="number" name="flask_total_volume" placeholder="Total Volume of Flasks"></td>		
+														</tr>
+													</table>
+													</div>
+												</div>
+												<div class="row">
+													<div class="12u">
+														<input type="submit" name="btn_next" value ="Calculate"/>
 											</form>
-										</table>
-										
-
-									</div>
+											</div>
+										</div>
+									</section>
 								</div>
 							</div>
 						</div>

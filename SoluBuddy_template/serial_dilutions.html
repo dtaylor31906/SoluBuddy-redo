@@ -49,35 +49,33 @@
 						<div id="content">
 							<div id="main-content">
 								<div class="inner">
-									<div>
-										
-										<table>
-											<th> Serial Dilutions </th>
-											<form action = "get">
-												<tr>
-													<td>Enter the Solvent Name : <input type = "text" name = "solvent_name" value = "Solvent"></td>
-													<td>Enter the Analyte Name : <input type = "text" name = "analyte_name" value = "Solute"></td>
-													<td>Enter the Molecular Weight of the Analyte (g) : <input type = "text" name = "analyte_weight" value = "Molarity of Stock Solution"></td>
-												</tr>
-															<br>
-												
-												<tr>
-													<td>Number of Dilution Flasks? : <input type = "text" name = "num_flasks" value = "Number of Dilutions"></td>
-													<td>Dilution Flask Volume (mL) : <input type = "text" name = "dilution_flask_volume" value = "Dilution Flask Volume"></td>
-													<td>Volume of solution transfered to each Flask: <input type = "text" name = "solution_transffed" value = "Solution Transffered Volume"></td>
-												</tr>
-															
-															<br>
-												
-												<tr>
-														<td><input type = "submit" name = "btn_next" value = "Next"></td>
-												</tr>
-												
-											</form>
-										</table>
-										
+								<section class="container box feature1">
+										<div class="row">
+											<div class="12u">
 
-									</div>
+												<h2>Serial Dilutions</h2>
+												<form id = "DilutionForm" action = "" method = "post">
+												<table class="solutions">
+														<tr>
+															<td><label for="solvent">Enter the Solvent Name :</label><input type ="text" name="solvent" placeholder="Solvent Name"></td>
+															<td><label for="analyte">Enter the Analyte Name : </label><input type ="text" name="analyte" placeholder="Analyte Name"></td>
+															<td><label for="analyte_weight">Enter the Molecular Weight of the Analyte (g) </label><input type ="number" name="analyte_weight" placeholder="Analyte Molecular Weight"></td>
+														</tr>
+														<tr>
+															<td><label for="num_flasks">Number of Dilution Flasks? :</label><input type ="number" name="num_flasks" placeholder="Number of Dilution Flasks"></td>
+															<td><label for="dilution_flasks">Dilution Flask Volume (mL) :</label><input type="number" name="dilution_flasks" placeholder="Number of Dilution Flasks)"></td>
+															<td><label for="vol_solution_transfered">Volume of solution transfered to each Flask: </label><input type ="number" name="vol_solution_transfered" placeholder="Volume of Solution Transffered"></td>		
+														</tr>
+													</table>
+													</div>
+												</div>
+												<div class="row">
+													<div class="12u">
+														<input type="submit" name="btn_next" value ="Calculate"/>
+											</form>
+											</div>
+										</div>
+									</section>
 								</div>
 							</div>
 						</div>

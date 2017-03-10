@@ -76,38 +76,36 @@
 						<div id="content">
 							<div id="main-content">
 								<div class="inner">
-									<div>
-												<table>
-													<th>Volumetric Transfer</th>
-															<br>
-													<form id = "VoluForm" method = "get">
+									<section class="container box feature1">
+										<div class="row">
+											<div class="12u">
+
+												<h2>Volumetric Transfer</h2>
+												<form id = "GravForm" action = "" method = "post">
+												<table class="solutions">
+														<tr>
+															<td><label for="solvent">Solvent Formula :</label><input type ="text" name="solvent" placeholder="Solvent Formula"></td>
+															<td><label for="solute">Solute Formula :</label><input type ="text" name="solute" placeholder="Solute Formula"></td>
+															<td><label for="molecular_weight">Solute Molecular Weight :</label><input type ="number" name="molecular_weight" placeholder="Solute Molecular Weight"></td>
+														</tr>
+														<tr>
+															<td><label for="sol_volume">Solution Volume:</label><input type ="number" name="sol_volume" placeholder="Solution Total Volume"></td>
+															<td><label for="soln_concentration">Solution Concentration :</label><input type="number" name="soln_concentration" placeholder="Solution Concentration (mol/L)"></td>
+															<td><label for="vol_solute_added">Volume of Solute to Add</label><input type ="number" name="vol_solute_added" placeholder="Volume of Solute to Add"></td>
+															<td><label for="desnsity">Density of Pure Solute : </label><input type ="number" name="density" placeholder="Denisty of Pure Solute"></td>			
+														</tr>
+													</table>
+													</div>
+												</div>
+												<div class="row">
+													<div class="12u">
+														<input type="submit" name="btn_next" value ="Calculate"/>
+											</form>
+											</div>
+										</div>
+									</section>
+								
 												
-															<tr>
-																<td style="text-align:center"> Solvent Forumla : <input id = "solvent_formula" type = "text" name = "solventFormula" value = "Solvent Forumla"></td>
-															
-																<td style="text-align:center">Solute Forumla : <input id = "solute_formula" type = "text" name = "soluteFormula" value = "Solute Forumla"></td>
-															
-																<td style="text-align:center"> Solute Molecular Weight: <input id = "mol_weight" type = "text" name = "molecularWeight" value = "Solute Molecular Weight"></td>
-															</tr>
-															
-															<tr>
-																<td style="text-align:center">Solution Total Volume (mL) : <input id = "sol_total_volume" type = "text" name = "soluteTotalVolume" value = "Solution Total Volume (mL)"></td>
-															
-																<td style="text-align:center">Density of Pure Solute (g/mL) : <input id = "density_solute" type = "text" name = "desnsity" value = "Density of Pure Solute"></td>
-															
-																<td style="text-align:center">Solution Concentration : <input id = "solution_con" type = "text" name = "soln_concentration" value = "Sol'n Concentration (mol/L)"></td>
-															
-																<td style="text-align:center">Volume of Solute to Add (mL): <input id = "vol_to_add" type = "text" name = "vol_solute_added" value = "Volume of Solute to Add"></td>
-															</tr>
-															
-																						
-																						
-															<tr>
-																<td style="text-align:center">&nbsp;</td>
-															</tr>
-														
-													</form>
-												</table>
 									</div>
 								</div>
 							</div>
