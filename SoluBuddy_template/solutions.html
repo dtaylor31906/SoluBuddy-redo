@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>SoluBuddy</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+
+<body class="homepage">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div class="container">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+
+						<!-- Logo -->
+						<h1><a href="index.html" id="logo">SOLU<strong>BUDDY</strong></a></h1>
+
+						<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current_page_item"><a href="index.html">Home</a></li>
+								<li><a href="educational-links.html">Educational Links</a></li>
+								<li><a href="saved-solutions.html">Saved Solutions</a></li>
+								<li><a href="#">Account</a></li>
+								<li><a href="#">Log Out</a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+			</div>
+		</div>
+
+		<!-- Main Wrapper -->
+		<div id="main-wrapper">
+			<div class="wrapper style1">
+				<div class="inner">
+
+					<!-- Feature 1 -->
+					<section class="container box feature1">
+						<div class="row">
+							<div class="12u">
+								<h2>Create New Solution</h2>
+							</div>
+						</div>
+
+						<div class="msg-area">
+							<div id="msg-content">
+								<h3 id="msg-title">Creating A Solution by Volumetric Transfer</h3>
+							</div>
+						</div>
+
+						<div class="form-area">
+							<input type="radio" name="volumetric" value="volumetric" id="volumetric" onclick="changeFormVol()" checked><strong>Volumetric</strong>
+							<input type="radio" name="gravimetric" value="gravimetric" id="gravimetric" onclick="changeFormGrav()"><strong>Gravimetric</strong>
+							<p>use the selection buttons to swap solution types<p>
+
+									<div id="form-section-grav">
+										<form id="GravForm-pure" action="" method="post">
+											<table>
+												<tr>
+													<td><label for="solvent-grav" class="field">Solvent Formula:</label>
+														<input type="text" name="solvent" id="solvent-grav" class="field" placeholder="Solvent Name" /></td>
+													<td class="error" id="solvent-error-grav"></td>
+												</tr>
+												<tr>
+													<td><label for="solute-grav" class="field">Solute Formula:</label>
+														<input type="text" name="solute" id="solute-grav" class="field" placeholder="e.g. H20 or HCl" /></td>
+													<td class="error" id="solute-error-grav"></td>
+												</tr>
+												<tr>
+													<td><label for="molecular-weight-grav" class="field">Solute Molecular Weight:</label>
+														<input type="number" name="molecular-weight-grav" id="molecular-weight-grav" class="field" placeholder="Solute Molecular Weight" /></td>
+													<td class="error" id="weight-error-grav"></td>
+												</tr>
+												<tr>
+													<td><label for="sol-volume-grav">Solution Volume:</label>
+														<input type="number" name="sol-volume-grav" id="sol-volume-grav" placeholder="Desired Volume of Solution" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="soln-concentration-grav">Solution Concentration (mol/L):</label>
+														<input type="number" name="soln-concentration-grav" id="soln-concentration-grav" placeholder="Desired Concentration of Solution (mol/L)" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="mass-solute-added-grav">Mass of Solute to Add</label>
+														<input type="number" name="mass-solute-added-grav" id="mass-solute-added-grav" placeholder="Mass of Solute to Add" /></td>
+													<td class="measure" id="mass-solute-added-measure-grav"><select><option value="mL" selected>mL</option><option value="L">L</option></select></</td>
+												</tr>
+												<tr>
+													<td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
+												</tr>
+											</table>
+										</form>
+									</div>
+
+									<div id="form-section-vol">
+										<form id="VolForm-pure" action="" method="post">
+											<table>
+												<tr>
+													<td><label for="solvent-vol" class="field">Solvent Formula:</label>
+														<input type="text" name="solvent" id="solvent-vol" class="field" placeholder="Solvent Name" /></td>
+													<td class="error" id="solvent-error-vol"></td>
+												</tr>
+												<tr>
+													<td><label for="solute-vol" class="field">Solute Formula:</label>
+														<input type="text" name="solute" id="solute-vol" class="field" placeholder="e.g. H20 or HCl" /></td>
+													<td class="error" id="solute-error-vol"></td>
+												</tr>
+												<tr>
+													<td><label for="molecular-weight-vol" class="field">Solute Molecular Weight:</label>
+														<input type="number" name="molecular-weight-vol" id="molecular-weight-vol" class="field" placeholder="Solute Molecular Weight" /></td>
+													<td class="error" id="weight-error-vol"></td>
+												</tr>
+												<tr>
+													<td><label for="sol-density-vol">Density of Pure Solute:</label>
+														<input type="number" name="sol-density-vol" id="sol-density-vol" placeholder="Density of Pure Solute" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="soln-volume-vol">Solution Total Volume (mL):</label>
+														<input type="number" name="soln-volume-vol" id="soln-volume-vol" placeholder="Solution Total Volume (mL)" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="soln-concentration-vol">Solution Concentration (mol/L):</label>
+														<input type="number" name="soln-concentration-vol" id="soln-concentration-vol" placeholder="Solution Concentration (mol/L)" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="vol-solute-added-vol">Volume of Solute to Add</label>
+														<input type="number" name="vol-solute-added-vol" id="vol-solute-added-vol" placeholder="Volume of Solute to Add" /></td>
+													<td class="measure" id="vol-solute-added-measure-vol"><select><option value="mL" selected>mL</option><option value="L">L</option></select></</td>
+												</tr>
+												<tr>
+													<td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
+												</tr>
+											</table>
+										</form>
+									</div>
+
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer Wrapper -->
+
+		<footer id="footer" class="container">
+			<div class="row">
+				<div class="12u">
+					<div id="copyright">
+						<ul class="menu">
+							<li>&copy; Dr David Kreller. All rights reserved</li>
+							<li>Design: <a href="http://ceit.georgiasouthern.edu/cs/">Georgia Southern University Computer Science</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/skel-viewport.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+	<script type="text/javascript">
+		function changeFormVol() {
+			document.getElementById('gravimetric').checked = false;
+			document.getElementById('form-section-vol').style.display = "block";
+			document.getElementById('form-section-grav').style.display = "none";
+			document.getElementById('msg-title').innerHTML = "Creating A Solution by Volumetric Transfer";
+		}
+
+		function changeFormGrav() {
+			document.getElementById('volumetric').checked = false;
+			document.getElementById('form-section-vol').style.display = "none";
+			document.getElementById('form-section-grav').style.display = "block";
+			document.getElementById('msg-title').innerHTML = "Creating A Solution by Gravimetric Transfer";
+		}
+	</script>
+
+</body>
+
+</html>
