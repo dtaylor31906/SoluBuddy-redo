@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>SoluBuddy</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+
+<body class="homepage">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div class="container">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+
+						<!-- Logo -->
+						<h1><a href="index.html" id="logo">SOLU<strong>BUDDY</strong></a></h1>
+
+						<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current_page_item"><a href="index.html">Home</a></li>
+								<li><a href="educational-links.html">Educational Links</a></li>
+								<li><a href="saved-solutions.html">Saved Solutions</a></li>
+								<li><a href="#">Account</a></li>
+								<li><a href="#">Log Out</a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+			</div>
+		</div>
+
+		<!-- Main Wrapper -->
+		<div id="main-wrapper">
+			<div class="wrapper style1">
+				<div class="inner">
+
+					<!-- Feature 1 -->
+					<section class="container box feature1">
+						<div class="row">
+							<div class="12u">
+								<h2>Create New Dilution</h2>
+							</div>
+						</div>
+
+						<div class="msg-area">
+							<div id="msg-content">
+								<h3 id="msg-title">Creating a Single Dilution</h3>
+							</div>
+						</div>
+
+						<div class="form-area">
+							<input type="radio" name="single" value="single" id="single" onclick="changeFormSingle()" checked><strong>Single Dilution</strong>
+							<input type="radio" name="multiple" value="multiple" id="multiple" onclick="changeFormMultiple()"><strong>Multiple Dilutions</strong>
+							<p>use the selection buttons to swap dilution types<p>
+
+									<div id="form-section-single-dilution">
+										<form id="SingleDilution" action="" method="post">
+											<table>
+												<tr>
+													<td><label for="solvent-single" class="field">Solvent Formula:</label>
+														<input type="text" name="solvent" id="solvent-single" class="field" placeholder="Solvent Name" /></td>
+													<td class="error" id="solvent-error-single"></td>
+												</tr>
+												<tr>
+													<td><label for="solute-single" class="field">Solute Formula:</label>
+														<input type="text" name="solute" id="solute-single" class="field" placeholder="e.g. H20 or HCl" /></td>
+													<td class="error" id="solute-error-single"></td>
+												</tr>
+												<tr>
+													<td><label for="soln-vol-single" class="field">Solution Total Volume:</label>
+														<input type="number" name="soln-vol-single" id="soln-vol-single" class="field" placeholder="Solution Total Volume (mL)" /></td>
+													<td class="error" id="weight-error-single"></td>
+												</tr>
+												<tr>
+													<td><label for="soln-concentration-single">Solution Concentration (mol/L):</label>
+														<input type="number" name="soln-concentration-single" id="soln-concentration-single" placeholder="Solution Concentration (mol/L)" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="solute-concentration-single">Solute Concentration (mol/L):</label>
+														<input type="number" name="solute-concentration-single" id="solute-concentration-single" placeholder="Solute Concentration (mol/L)" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="solute-add-single">Volume of Solute to Add</label>
+														<input type="number" name="solute-add-single" id="solute-add-single" placeholder="Volume of Solute to Add" /></td>
+													<td class="measure" id="volume-solute-add-single"><select><option value="mL" selected>mL</option><option value="L">L</option></select></</td>
+												</tr>
+												<tr>
+													<td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
+												</tr>
+											</table>
+										</form>
+									</div>
+
+									<div id="form-section-multiple-dilution">
+										<form id="MultipleDilution" action="" method="post">
+											<table>
+												<tr>
+													<td><label for="solvent-multiple" class="field">Solvent Formula:</label>
+														<input type="text" name="solvent" id="solvent-multiple" class="field" placeholder="Solvent Name" /></td>
+													<td class="error" id="solvent-error-multiple"></td>
+												</tr>
+												<tr>
+													<td><label for="solute-multiple" class="field">Solute Formula:</label>
+														<input type="text" name="solute" id="solute-multiple" class="field" placeholder="e.g. H20 or HCl" /></td>
+													<td class="error" id="solute-error-multiple"></td>
+												</tr>
+												<tr>
+													<td><label for="molarity-multiple" class="field">Molarity of Origional Stock Solution:</label>
+														<input type="number" name="molarity-multiple" id="molarity-multiple" class="field" placeholder="Molarity of Origional Stock Solution" /></td>
+													<td class="error" id="molarity-error-multiple"></td>
+												</tr>
+												<tr>
+													<td><label for="flasks-multiple">Number of Dilution Flasks:</label>
+														<input type="number" name="flasks-multiple" id="flasks-multiple" placeholder="Number of Dilution Flasks" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="flask-volume-multiple">Dilution Flask Volume (mL):</label>
+														<input type="number" name="flask-volume-multiple" id="flask-volume-multiple" placeholder="Dilution Flask Volume (mL)" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td><label for="transfer-qty-multiple">Quantity of Solution to Transfer:</label>
+														<input type="number" name="transfer-qty-multiple" id="transfer-qty-multiple" placeholder="Quantity of Solution to Transfer" /></td>
+													<td class="error"></td>
+												</tr>
+												<tr>
+													<td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
+												</tr>
+											</table>
+										</form>
+									</div>
+
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer Wrapper -->
+
+		<footer id="footer" class="container">
+			<div class="row">
+				<div class="12u">
+					<div id="copyright">
+						<ul class="menu">
+							<li>&copy; Dr David Kreller. All rights reserved</li>
+							<li>Design: <a href="http://ceit.georgiasouthern.edu/cs/">Georgia Southern University Computer Science</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/skel-viewport.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+	<script type="text/javascript">
+		function changeFormSingle() {
+			document.getElementById('multiple').checked = false;
+			document.getElementById('form-section-single-dilution').style.display = "block";
+			document.getElementById('form-section-multiple-dilution').style.display = "none";
+			document.getElementById('msg-title').innerHTML = "Creating a Single Dilution";
+		}
+
+		function changeFormMultiple() {
+			document.getElementById('single').checked = false;
+			document.getElementById('form-section-single-dilution').style.display = "none";
+			document.getElementById('form-section-multiple-dilution').style.display = "block";
+			document.getElementById('msg-title').innerHTML = "Creating Multiple Dilutions by Transfer";
+		}
+	</script>
+
+</body>
+
+</html>

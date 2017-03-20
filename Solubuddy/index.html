@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
 	<title>SoluBuddy</title>
 	<meta charset="utf-8" />
@@ -9,6 +10,7 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 </head>
+
 <body class="homepage">
 	<div id="page-wrapper">
 
@@ -46,27 +48,11 @@
 					<section class="container box feature1">
 						<div class="row">
 							<div class="12u">
-
-								<h2>Gravimetric Transfers</h2>
-								<form id = "GravForm" action = "" method = "post">
-								<table class="solutions">
-										<tr>
-											<td><label for="solvent">Solvent Name:</label><input type ="text" name="solvent" id="solvent" placeholder="Solvent Name"></td>
-											<td><label for="solute">Solute Formula:</label><input type ="text" name="solute" id="solute" placeholder="e.g. H20 or HCl"></td>
-											<td><label for="molecular_weight">Solute Molecular Weight:</label><input type ="number" name="molecular_weight" id="molecular_weight" placeholder="Solute Molecular Weight"></td>
-										</tr>
-											<tr>
-											<td><label for="sol_volume">Solution Volume:</label><input type ="number" name="sol_volume" id="sol_volume" placeholder="Desired Volume of Solution"></td>
-											<td><label for="soln_concentration">Solution Concentration (mol/L):</label><input type="number" name="soln_concentration" id="soln_concentration" placeholder="Desired Concentration of Solution (mol/L)"></td>
-											<td><label for="mass_solute_added">Mass of Solute to Add</label><input type ="number" name="mass_solute_added" id="mass_solute_added" placeholder="Mass of Solute to Add"></td>
-										</tr>
-									</table>
-							</div>
-						</div>
-								<div class="row">
-									<div class="12u">
-										<input type="submit" name="btn_next" value ="Calculate"/>
-							</form>
+								<h2>Select the type of activity you wish to perform</h2><br>
+								<h3>I wish to create a new solution</h3><a href="solutions.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
+								<h3>I wish to create a new solution using stock</h3><a href="stock-solution.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
+								<h3>I wish to create a dilution</h3><a href="dilutions.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
+								<h3>I wish to create calibration standards</h3><a href="#" class="button small icon fa-check-circle">Go</a>
 							</div>
 						</div>
 					</section>
@@ -82,7 +68,8 @@
 				<div class="12u">
 					<div id="copyright">
 						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; Dr David Kreller. All rights reserved</li>
+							<li>Design: <a href="http://ceit.georgiasouthern.edu/cs/">Georgia Southern University Computer Science</a></li>
 						</ul>
 					</div>
 				</div>
@@ -101,4 +88,5 @@
 	<script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
