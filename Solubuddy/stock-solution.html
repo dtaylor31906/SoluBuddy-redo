@@ -45,25 +45,25 @@
             <div class="wrapper style1">
                 <div class="inner">
 
-                    <!-- Feature 1 -->
+                    <!-- Form and message display area -->
                     <section class="container box feature1">
                         <div class="row">
                             <div class="12u">
                                 <h2>Create New Solution Using Concentrated Stock</h2>
                             </div>
                         </div>
-
+                        <!-- message area for displayed form -->
                         <div class="msg-area">
                             <div id="msg-content">
                                 <h3 id="msg-title">Creating Solution Using Concentrated Stock by Volumetric Transfer</h3>
                             </div>
                         </div>
-
+                        <!-- form selection radio buttons -->
                         <div class="form-area">
                             <input type="radio" name="volumetric" value="volumetric" id="volumetric" onclick="changeFormVol()" checked><strong>Volumetric</strong>
                             <input type="radio" name="gravimetric" value="gravimetric" id="gravimetric" onclick="changeFormGrav()"><strong>Gravimetric</strong>
                             <p>use the selection buttons to swap solution types<p>
-
+                                    <!-- solution using stock gravimetric form -->
                                     <div id="form-section-grav">
                                         <form id="GravForm-stock" action="" method="post">
                                             <table>
@@ -103,7 +103,7 @@
                                             </table>
                                         </form>
                                     </div>
-
+                                    <!-- solution using stock volumetric form -->
                                     <div id="form-section-vol">
                                         <form id="VolForm-stock" action="" method="post">
                                             <table>
@@ -140,7 +140,7 @@
                                                 <tr>
                                                     <td><label for="vol-solute-added-vol">Volume of Solute to Add</label>
                                                         <input type="number" name="vol-solute-added-vol" id="vol-solute-added-vol" placeholder="Volume of Solute to Add" /></td>
-                                                    <td class="measure" id="vol-solute-added-measure-vol"><select><option value="mL" selected>mL</option><option value="L">L</option></select></</td>
+                                                    <td class="measure" id="vol-solute-added-measure-vol"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
@@ -148,7 +148,6 @@
                                             </table>
                                         </form>
                                     </div>
-
                         </div>
                     </section>
                 </div>
@@ -180,7 +179,7 @@
     <script src="assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
-
+<!-- radio button control and form swapping -->
     <script type="text/javascript">
         function changeFormVol() {
             document.getElementById('gravimetric').checked = false;

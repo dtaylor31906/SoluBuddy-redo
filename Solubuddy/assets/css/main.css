@@ -58,6 +58,18 @@ div#form-section-multiple-dilution {
   display: none;
 }
 
+div#form-section-external {
+  display: block;
+}
+
+div#form-section-internal {
+  display: none;
+}
+
+div#form-section-addition {
+  display: none;
+}
+
 div.form-area {
     width: 50%;
     height: auto;
