@@ -74,7 +74,6 @@ div.form-area {
     width: 50%;
     height: auto;
     display: inline-block;
-    border-right: 3px solid black;
 }
 
 div.msg-area {
@@ -86,11 +85,21 @@ div.msg-area {
     min-height: 34em;
     font-weight: 900;
     color: black;
+    border-left: 3px solid black;
 }
 
 @media (max-width: 991px) {
     .msg-area {
         display: none !important;
+    }
+    .form-area form input[type="text"] {
+          width: 14em;
+    }
+    .form-area form input[type="number"] {
+          width: 14em;
+    }
+    .form-area error {
+      float: left;
     }
 }
 
