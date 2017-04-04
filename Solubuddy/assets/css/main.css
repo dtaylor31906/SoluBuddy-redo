@@ -70,6 +70,22 @@ div#form-section-addition {
   display: none;
 }
 
+div#main-selections {
+  display: block;
+}
+
+div#main-login {
+  display: none;
+  position: absolute;
+  margin-left: 30%;
+}
+
+div#main-tutorial {
+  display: none;
+  text-align: justify;
+  font-weight: bold;
+}
+
 div.form-area {
     width: 50%;
     height: auto;

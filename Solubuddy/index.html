@@ -48,15 +48,39 @@
                     <section class="container box feature1">
                         <div class="row">
                             <div class="12u">
+                              <div id=main-selections>
                                 <h2>Select the type of activity you wish to perform</h2><br>
                                 <h3>I wish to create a new solution using a pure solvent</h3><a href="solutions.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
                                 <h3>I wish to create a new solution using solvent in a stock solution</h3><a href="stock-solution.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
                                 <h3>I wish to create a dilution</h3><a href="dilutions.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
                                 <h3>I wish to create calibration standards</h3><a href="calibrations.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
+                              </div>
+                              <!-- Site loginn-->
+                              <div id=main-login>
+                                <h3>Please Login</h3>
+                                <form id="login" action="php/login.php" method="post">
+                                  <input type="text" name="username" id="username" placeholder="enter username" /><br>
+                                  <input type="password" name="password" id="password" placeholder="enter password" /><br>
+                                  <input type="button" name="btn-login" id="btn-login" value="Login" />
+                                </form>
+                                <br>
+                                <a href="#">create new user</a>
+                              </div>
+                              <!-- Site Tutorial Display -->
+                              <div id="main-tutorial">
+                                <h3>Welcome to Solubuddy!</h3>
+                                <p>This website has been designed to help you in creating solutions, dilutions, and calibration standards. To use this site you will select which type of activity
+                                  you wish to perform, then use the buttons at the top of the corresponding page to select the details of the activity. Instructions for perfoming the activity
+                                  will appear on the right hand side of the screen to help guide you through the process. After submitting your entries and calculation results a final message will
+                                  alert you to the accuracy of your calculations.</p>
+                                  <p>The menu items at the top of the page will help you to navigate to different areas of the site such as educational videos and calculations you have saved</p>
+                                  <input type="checkbox" id="tutorial-box" /><span>do not show tutorial again</span>
+                                  <br><br>
+                                  <input type="button" class="alt" value="Get Started" onclick="tutorial()"/>
+                              </div>
                             </div>
                         </div>
                     </section>
-
                 </div>
             </div>
         </div>
@@ -86,6 +110,18 @@
     <script src="assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/login.js"</script>
+
+
+    <script type="text/javascript">
+    function tutorial() {
+      document.getElementById('main-login').style.display = "none";
+      document.getElementById('main-tutorial').style.display = "none";
+      document.getElementById('main-selections').style.display = "block";
+    }
+
+    </script>
 
 </body>
 
