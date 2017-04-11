@@ -35,7 +35,7 @@ function initApp() {
             var photoURL = user.photoURL;
             var uid = user.uid;
             var providerData = user.providerData;
-            console.log(user);
+            console.log(photoURL);
         } else {
             // User is signed out.
             //send user to login
