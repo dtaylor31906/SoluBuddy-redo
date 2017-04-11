@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
 </head>
 
 <body class="homepage">
@@ -32,7 +33,7 @@
                                 <li><a href="educational-links.html">Educational Links</a></li>
                                 <li><a href="saved-solutions.html">Saved Solutions</a></li>
                                 <li><a href="#">Account</a></li>
-                                <li><a href="#">Log Out</a></li>
+                                <li id="logoutButton"><a href="#">Log Out</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -183,6 +184,7 @@
     <script src="js/utilities.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
+    <script src="js/login.js"></script> <!--login script-->
     <script src="js/solutionsController.js"></script>
     <!-- radio button control and form swapping -->
     <script type="text/javascript">
