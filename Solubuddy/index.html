@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
 </head>
 
 <body class="homepage">
@@ -31,7 +33,7 @@
                                 <li><a href="educational-links.html">Educational Links</a></li>
                                 <li><a href="saved-solutions.html">Saved Solutions</a></li>
                                 <li><a href="#">Account</a></li>
-                                <li><a href="#">Log Out</a></li>
+                                <li id="logoutButton"><a href="#">Log Out</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -54,17 +56,6 @@
                                 <h3>I wish to create a new solution using solvent in a stock solution</h3><a href="stock-solution.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
                                 <h3>I wish to create a dilution</h3><a href="dilutions.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
                                 <h3>I wish to create calibration standards</h3><a href="calibrations.html#main-wrapper" class="button small icon fa-check-circle">Go</a>
-                              </div>
-                              <!-- Site loginn-->
-                              <div id=main-login>
-                                <h3>Please Login</h3>
-                                <form id="login" action="php/login.php" method="post">
-                                  <input type="text" name="username" id="username" placeholder="enter username" /><br>
-                                  <input type="password" name="password" id="password" placeholder="enter password" /><br>
-                                  <input type="button" name="btn-login" id="btn-login" value="Login" />
-                                </form>
-                                <br>
-                                <a href="#">create new user</a>
                               </div>
                               <!-- Site Tutorial Display -->
                               <div id="main-tutorial">
@@ -111,7 +102,9 @@
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/login.js"</script>
+    <script src="js/indexController.js"></script> <!--controls the page-->
+
+  <!--  <script src="js/login.js"</script>-->
 
 
     <script type="text/javascript">
