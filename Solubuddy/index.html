@@ -67,7 +67,7 @@
                                   <p>The menu items at the top of the page will help you to navigate to different areas of the site such as educational videos and calculations you have saved</p>
                                   <input type="checkbox" id="tutorial-box" /><span>do not show tutorial again</span>
                                   <br><br>
-                                  <input type="button" class="alt" value="Get Started" onclick="tutorial()"/>
+                                  <input type="button" class="alt" value="Get Started" onclick="closeTutorial()"/>
                               </div>
                             </div>
                         </div>
@@ -103,18 +103,7 @@
     <script src="assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/login.js"></script> <!--login script-->
-
-  <!--  <script src="js/login.js"</script>-->
-
-
-    <script type="text/javascript">
-    function tutorial() {
-      document.getElementById('main-login').style.display = "none";
-      document.getElementById('main-tutorial').style.display = "none";
-      document.getElementById('main-selections').style.display = "block";
-    }
-
-    </script>
+    <script src="js/indexController.js"></script>
 
 </body>
 

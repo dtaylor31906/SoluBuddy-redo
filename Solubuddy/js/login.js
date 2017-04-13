@@ -1,19 +1,20 @@
-
-$(function () {//onReady
-    initFireBase();
-    initApp();
-    $("#logoutButton").click(function () {
-        firebase.auth().signOut().then(function() {
-            // Sign-out successful.
-            console.log("LOGGED OUT");
-        }).catch(function(error) {
-            // An error happened.
-            console.log("error");
+function loginInit(){
+    var user;
+    this.currentUser = firebase.currentUser;
+    loginInit.prototype.startUp = function () {
+        let p1= new Promise(function(resolve, reject){
+            initFireBase();
+            initApp();
+            resolve(firebase.currentUser);
+            reject(firebase.currentUser);
         });
-    })//click event for logout button.
-})
+         return p1;
+    };
+}
+
 //code snippet for any page that uses firebase
 function initFireBase() {
+
     var config = {
         apiKey: "AIzaSyDmWKJArULZoTI8GvpFTagrJ8-48sr7y6k",
         authDomain: "solubuddy-ffc1c.firebaseapp.com",
@@ -29,17 +30,23 @@ function initApp() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            console.log(photoURL);
+            currentUser = user;
+            console.log("uid:" + user.uid);
+            $("#logoutButton").click(function () {
+                firebase.auth().signOut().then(function() {
+                    // Sign-out successful.
+                    console.log("LOGGED OUT");
+                }).catch(function(error) {
+                    // An error happened.
+                    console.log("error");
+                });
+            })//click event for logout button.
+
         } else {
             // User is signed out.
             //send user to login
             window.location.href = 'fireBaseAuth.html';
+            return null;
         }
     }, function(error) {
         console.log(error);

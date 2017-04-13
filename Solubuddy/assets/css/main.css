@@ -71,7 +71,7 @@ div#form-section-addition {
 }
 
 div#main-selections {
-  display: block;
+  display: none;
 }
 
 div#main-login {
