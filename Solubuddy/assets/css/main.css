@@ -81,7 +81,7 @@ div#main-login {
 }
 
 div#main-tutorial {
-  display: none;
+  display: block;
   text-align: justify;
   font-weight: bold;
 }
