@@ -71,7 +71,7 @@ div#form-section-addition {
 }
 
 div#main-selections {
-  display: none;
+  display: block;
 }
 
 div#main-login {
@@ -81,7 +81,7 @@ div#main-login {
 }
 
 div#main-tutorial {
-  display: none;
+  display: block;
   text-align: justify;
   font-weight: bold;
 }
