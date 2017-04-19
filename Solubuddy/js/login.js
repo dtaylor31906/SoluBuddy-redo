@@ -1,5 +1,5 @@
 var count = 0;
-var tutorialCount;//helps to make sure tutorial is only showed once per login.
+var tutorialCount = 0;//helps to make sure tutorial is only showed once per login.
 initFireBase();
 function Login(){
     tutorialCount = 0;
