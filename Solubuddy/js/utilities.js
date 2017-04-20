@@ -40,3 +40,14 @@ function findPrecision(factors)
     }
     return minSignificantFigures;
 }
+//returns ture if the parameters are with 1% of each other.
+function isWithinOnePercent(userVal, calculatedVal)
+{
+    var diffrence = Math.abs(calculatedVal - userVal) ;
+    var decimal = diffrence/calculatedVal;
+    var percent = decimal *100;
+    if (percent <= 1)
+        return true;
+    else
+        return percent;
+}

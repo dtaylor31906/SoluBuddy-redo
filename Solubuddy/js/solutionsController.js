@@ -38,8 +38,10 @@ function gravimetricSubmit(form)
 }
 
 
+
 function volumetricSubmit(form)
 {
+    //create solution object from user input
     var navigableForm = {};
     $.each(form, function (i, field) {
         navigableForm[field.name] = field.value;
@@ -48,8 +50,18 @@ function volumetricSubmit(form)
     ,navigableForm["soln-volume-vol"],navigableForm["soln-concentration-vol"]);
     var solution = new SolutionByVolume(subSolution,navigableForm["sol-density-vol"]);
 
-    console.log(solution);
-
+    //check user answer against calculations
+    var userAnswer = navigableForm["vol-solute-added-vol"];
+    var percentError = isWithinOnePercent(userAnswer,solution.getVolume());
+    if(percentError === true)
+    {
+        $("#volumeToAddError").html("Your solution is correct");
+        $("#volumeToAddError").css("color","blue");
+    }
+    else if(typeof percentError == "number" && percentError > 1)
+    {
+        $("#volumeToAddError").html("Your Answer is "+ percentError +"% off.");
+    }
 }
 function changeSolFormVol() {
     document.getElementById('gravimetric').checked = false;
