@@ -38,10 +38,6 @@ function gravimetricSubmit(form)
 }
 
 
-//Value Retrieval Function
-function getValue(valueName, form) {
-    return form[valueName];
-};
 function volumetricSubmit(form)
 {
     var navigableForm = {};
