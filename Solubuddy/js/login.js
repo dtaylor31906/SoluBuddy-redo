@@ -6,6 +6,8 @@ function Login(){
     this.auth = firebase.auth();
     this.database = firebase.database();
     this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+    logOutButton();
+
 }
 Login.prototype.getUser = function () {
     return this.soluUser;
@@ -57,6 +59,21 @@ Login.prototype.onAuthStateChanged = function (user) {
     }
 }, function(error) {
     console.log(error);
+}
+function logOutButton() {
+    if($("#logoutButton"))
+    {
+        //check if closeTutorial check box has checked
+        $("#logoutButton").click(function () {
+            firebase.auth().signOut().then(function() {
+                // Sign-out successful.
+                console.log("LOGGED OUT");
+            }).catch(function(error) {
+                // An error happened.
+                console.log("error");
+            });
+        })//click event for logout button.
+    }
 }
 //code snippet for any page that uses firebase
 function initFireBase() {

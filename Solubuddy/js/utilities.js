@@ -28,7 +28,7 @@ function findPrecision(factors)
     var minSignificantFigures = 0;
     for(var i = 0; i< factors.length; i++)
     {
-        if(i = 0)//first iteration
+        if(i === 0)//first iteration
         {
             minSignificantFigures = countSigFigs(factors[i]);
             continue;
@@ -38,4 +38,5 @@ function findPrecision(factors)
             minSignificantFigures = countSigFigs(factors[i]);
         }
     }
+    return minSignificantFigures;
 }

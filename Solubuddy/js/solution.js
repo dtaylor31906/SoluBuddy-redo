@@ -8,7 +8,7 @@ function SolutionByMass(solventName, soluteFormula, soluteMolecularWeight, total
 {
     var factors = [soluteMolecularWeight,totalVolume,desiredConcentration];//place all the factors in an array
     var soluteMass = findMass(soluteMolecularWeight,totalVolume,desiredConcentration);
-
+    this.factors = factors
     this.precision = findPrecision(factors);
     this.solventName = solventName;
     this.soluteFormula = soluteFormula;
@@ -26,8 +26,9 @@ function SolutionByVolume(SolutionByMass, density)
 {
     this.SolutionByMass = SolutionByMass;
     this.density = density;
-    this.soluteVolume = SolutionByMass.soluteMass * density;
-    var factors = SolutionByMass.factors.push(density);
+    this.soluteVolume = SolutionByMass.getMass() * density;
+    var factors = SolutionByMass.factors;
+    factors.push(density);
     this.precision = findPrecision(factors);
     SolutionByVolume.prototype.getVolume = function ()
     {
@@ -43,7 +44,7 @@ function SolutionByMassStckSoln(SolutionByMass,massPercent)
 {
     this.SolutionByMass = SolutionByMass;
     this.massPercent = massPercent;
-    this.soluteMass = this.SolutionByMass.soluteMass * massPercent;//(in grams)
+    this.soluteMass = this.SolutionByMass.getMass() * massPercent;//(in grams)
     var factors = SolutionByMass.factors.push(massPercent)
     this.precision = findPrecision(factors);
     SolutionByMassStckSoln.prototype.getMass = function ()
