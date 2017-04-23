@@ -55,12 +55,13 @@ function volumetricSubmit(form)
     var percentError = isWithinOnePercent(userAnswer,solution.getVolume());
     if(percentError === true)
     {
-        $("#volumeToAddError").html("Your solution is correct");
+        $("#volumeToAddError").html("Your solution is correct we calculated: " + solution.getVolume());
         $("#volumeToAddError").css("color","blue");
     }
-    else if(typeof percentError == "number" && percentError > 1)
+    else if(typeof percentError == "number" && percentError > .25)
     {
-        $("#volumeToAddError").html("Your Answer is "+ percentError +"% off.");
+        $("#volumeToAddError").html("Your Answer is "+ percentError.toFixed(2) +"% off.");
+        $("#volumeToAddError").css("color","red");
     }
 }
 function changeSolFormVol() {

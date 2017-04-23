@@ -17,7 +17,7 @@ function SolutionByMass(solventName, soluteFormula, soluteMolecularWeight, total
     this.desiredConcentration = desiredConcentration;// in mol/L
     SolutionByMass.prototype.getMass = function()
     {
-        return soluteMass.toPrecision(this.precision);
+        return soluteMass.toFixed(this.precision);
     }
 }
 //This is a construtor used to make a solution object when the solute is added by volume.
@@ -26,13 +26,14 @@ function SolutionByVolume(SolutionByMass, density)
 {
     this.SolutionByMass = SolutionByMass;
     this.density = density;
-    this.soluteVolume = SolutionByMass.getMass() * density;
+    this.soluteVolume = SolutionByMass.getMass() * (1/density);
     var factors = SolutionByMass.factors;
     factors.push(density);
     this.precision = findPrecision(factors);
     SolutionByVolume.prototype.getVolume = function ()
     {
-        return this.soluteVolume.toPrecision(this.precision);
+        console.log(Number(this.soluteVolume.toPrecision(this.precision)));
+        return Number(this.soluteVolume.toPrecision(this.precision));
     }
 
 }
@@ -49,7 +50,7 @@ function SolutionByMassStckSoln(SolutionByMass,massPercent)
     this.precision = findPrecision(factors);
     SolutionByMassStckSoln.prototype.getMass = function ()
     {
-        return this.soluteMass.toPrecision(this.precision);
+        return this.soluteMass.toFixed(this.precision);
     }
 
 }
@@ -65,13 +66,13 @@ function SolutionByVolumeStckSoln(SolutionByMassStckSoln, density)
 {
     this.SolutionByMassStckSoln = SolutionByMassStckSoln;
     this.density = density;
-    this.soluteVolume = SolutionByMassStckSoln.soluteMass*density;
+    this.soluteVolume = SolutionByMassStckSoln.soluteMass*(1/density);
 
     var factors = SolutionByMassStckSoln.factors.push(density);
     this.precision = findPrecision(factors);
     SolutionByMassStckSoln.prototype.getVolume = function ()
     {
-        return this.soluteVolume.toPrecision(this.precision);
+        return this.soluteVolume.toFixed(this.precision);
     }
 }
 
@@ -83,7 +84,7 @@ function SolutionByVolumeStckSoln(SolutionByMassStckSoln, density)
 * @return Returns the the mass of solute to be added (in grams)*/
 function findMass(soluteMolecularWeight, totalVolume, desiredConcentration)
 {
-    var mass = soluteMolecularWeight * totalVolume *desiredConcentration;//in grams
+    var mass = soluteMolecularWeight * totalVolume *(desiredConcentration/1000);//in grams
     //now that the mass is found the matter of significant figures need to be handled
     //while multiplying the answer given should have the number of significant figures from the factor with the least.
     return mass
