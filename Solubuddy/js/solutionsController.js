@@ -1,4 +1,14 @@
 //script that controls the bulk of the 'solutions.html'
+//TODO: add some message that alert users that answers between 1 and maybe 3 percent off maybe due to sigFig error.
+//for example if a user suubmits an answer with 4 sigfig but should only hasve 2 based on our calculations.
+//The site well return error sometimes because the rounding done will shift the answers far enough away frome each other
+// even though calculations were done correctly otherwise.
+
+//TODO:mitigate this problem by implementing an array of answers by using the number.prototype.toPrecision method
+//this will allow you to check if a user answer is the same as the correct answer written at a diffrent percision
+/*put maybe 3 or 4 above and below the correct precision which is already calculated by our code.
+* then check the user answers against the correct answer written at the correct precision and wrong precision
+* then return helpful information to teach the student that the sigFigs or direct to one of DR.Krellers video on the subject*/
 $(document).ready(function ()
 {
 
@@ -23,18 +33,28 @@ function gravimetricSubmit(form)
     $.each(form, function (i, field) {
         navigableForm[field.name] = field.value;
     });
-    console.log(navigableForm);
+
     var solvent = navigableForm["solvent"];
     var solute = navigableForm["solute"];
     var molecularWeight = navigableForm["molecular-weight-grav"];
     var totalVolume = navigableForm["sol-volume-grav"];
     var concentration = navigableForm["soln-concentration-grav"];
-    var solution = new SolutionByMass(solvent, solute
-    ,molecularWeight,totalVolume,concentration);
-    //var solution = new SolutionByMass(form["solvent"]);
-    console.log(navigableForm);
-    console.log(solution.desiredConcentration);
-    //console.log(form[1].name);prints solvent
+    var solution = new SolutionByMass(solvent, solute, molecularWeight,totalVolume,concentration);
+    //check user answer against calculations
+    let userAnswer = navigableForm["mass-solute-added-grav"];
+    let percentError = isCloseEnough(userAnswer,solution.getMass());
+
+    let massToAddError = $("#massToAddError");
+    if(percentError === true)
+    {
+        massToAddError.html("Your solution is correct we calculated: " + solution.getMass());
+        massToAddError.css("color","blue");
+    }
+    else if(typeof percentError == "number" && percentError > .25)
+    {
+        massToAddError.html("Your Answer is "+ percentError.toFixed(2) +"% off.");
+        massToAddError.css("color","red");
+    }
 }
 
 
@@ -52,16 +72,17 @@ function volumetricSubmit(form)
 
     //check user answer against calculations
     var userAnswer = navigableForm["vol-solute-added-vol"];
-    var percentError = isWithinOnePercent(userAnswer,solution.getVolume());
+    var percentError = isCloseEnough(userAnswer,solution.getVolume());//currently set to return true is answer is within .25%
+    let volumeToAddError = $("#volumeToAddError");
     if(percentError === true)
     {
-        $("#volumeToAddError").html("Your solution is correct we calculated: " + solution.getVolume());
-        $("#volumeToAddError").css("color","blue");
+        volumeToAddError.html("Your solution is correct we calculated: " + solution.getVolume());
+        volumeToAddError.css("color","blue");
     }
     else if(typeof percentError == "number" && percentError > .25)
     {
-        $("#volumeToAddError").html("Your Answer is "+ percentError.toFixed(2) +"% off.");
-        $("#volumeToAddError").css("color","red");
+        volumeToAddError.html("Your Answer is "+ percentError.toFixed(2) +"% off.");
+        volumeToAddError.css("color","red");
     }
 }
 function changeSolFormVol() {

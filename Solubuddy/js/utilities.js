@@ -41,7 +41,7 @@ function findPrecision(factors)
     return minSignificantFigures;
 }
 //returns ture if the parameters are with .25% of each other.
-function isWithinOnePercent(userVal, calculatedVal)
+function isCloseEnough(userVal, calculatedVal)
 {
     var diffrence = Math.abs(calculatedVal - userVal) ;
     var decimal = diffrence/calculatedVal;

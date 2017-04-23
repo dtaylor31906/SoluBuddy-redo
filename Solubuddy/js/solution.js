@@ -17,7 +17,7 @@ function SolutionByMass(solventName, soluteFormula, soluteMolecularWeight, total
     this.desiredConcentration = desiredConcentration;// in mol/L
     SolutionByMass.prototype.getMass = function()
     {
-        return soluteMass.toFixed(this.precision);
+        return Number(soluteMass.toPrecision(this.precision));
     }
 }
 //This is a construtor used to make a solution object when the solute is added by volume.
@@ -80,7 +80,7 @@ function SolutionByVolumeStckSoln(SolutionByMassStckSoln, density)
 /*returns the mass of solute to be added to the solvent to make the desired solution
 * @param number (in g/mol) soluteMolecularWright
 * @param number (in mL) totalVolume
-* @param number (in mol/L) desiredConcentration
+* @param number (in mol/L) desiredConcentration-- is divided by 1000 to convert liters to mL
 * @return Returns the the mass of solute to be added (in grams)*/
 function findMass(soluteMolecularWeight, totalVolume, desiredConcentration)
 {
