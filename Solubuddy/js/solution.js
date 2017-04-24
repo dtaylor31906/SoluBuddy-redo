@@ -7,7 +7,7 @@
 function SolutionByMass(solventName, soluteFormula, soluteMolecularWeight, totalVolume, desiredConcentration)
 {
     var factors = [soluteMolecularWeight,totalVolume,desiredConcentration];//place all the factors in an array
-    var soluteMass = findMass(soluteMolecularWeight,totalVolume,desiredConcentration);
+    this.soluteMass = findMass(soluteMolecularWeight,totalVolume,desiredConcentration);
     this.factors = factors
     this.precision = findPrecision(factors);
     this.solventName = solventName;
@@ -26,7 +26,7 @@ function SolutionByVolume(SolutionByMass, density)
 {
     this.SolutionByMass = SolutionByMass;
     this.density = density;
-    this.soluteVolume = SolutionByMass.getMass() * (1/density);
+    this.soluteVolume = SolutionByMass.soluteMass * (1/density);
     var factors = SolutionByMass.factors;
     factors.push(density);
     this.precision = findPrecision(factors);
@@ -40,17 +40,18 @@ function SolutionByVolume(SolutionByMass, density)
 //This is a constructor used to make as solution object when the solute is inside a stock solution and the mass percent
 //of the solute is known
 //@param1 is an object containing pertinent data dor the calculations
-//@param2 is a the mass percent(grams) passed in as a decimal, for example 56.7% would be passed as .567.
+//@param2 is a the mass percent(grams)
 function SolutionByMassStckSoln(SolutionByMass,massPercent)
 {
     this.SolutionByMass = SolutionByMass;
-    this.massPercent = massPercent;
-    this.soluteMass = this.SolutionByMass.getMass() * massPercent;//(in grams)
-    var factors = SolutionByMass.factors.push(massPercent)
-    this.precision = findPrecision(factors);
+    this.massPercent = massPercent/100.00;
+    this.soluteMass = this.SolutionByMass.soluteMass * (1/this.massPercent);//(in grams)
+    this.factors = SolutionByMass.factors;
+    this.factors.push(massPercent);
+    this.precision = findPrecision(this.factors);
     SolutionByMassStckSoln.prototype.getMass = function ()
     {
-        return this.soluteMass.toFixed(this.precision);
+        return Number(this.soluteMass.toPrecision(this.precision));
     }
 
 }
@@ -61,18 +62,19 @@ function SolutionByMassStckSoln(SolutionByMass,massPercent)
 /*This is a constructor for making solution object when the solute is in a stock soltuion and it is to be transferd
 * by volume
 * @param1 is an object containing pertinent data dor the calculations
-* param2 is the density(mL/g) of the stock solution*/
+* param2 is the density(g/ml) of the stock solution*/
 function SolutionByVolumeStckSoln(SolutionByMassStckSoln, density)
 {
     this.SolutionByMassStckSoln = SolutionByMassStckSoln;
     this.density = density;
     this.soluteVolume = SolutionByMassStckSoln.soluteMass*(1/density);
 
-    var factors = SolutionByMassStckSoln.factors.push(density);
+    var factors = SolutionByMassStckSoln.factors;
+    factors.push(density);
     this.precision = findPrecision(factors);
-    SolutionByMassStckSoln.prototype.getVolume = function ()
+    SolutionByVolumeStckSoln.prototype.getVolume = function ()
     {
-        return this.soluteVolume.toFixed(this.precision);
+        return Number(this.soluteVolume.toPrecision(this.precision));
     }
 }
 

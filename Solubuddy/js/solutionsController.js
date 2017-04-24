@@ -8,7 +8,8 @@
 //this will allow you to check if a user answer is the same as the correct answer written at a diffrent percision
 /*put maybe 3 or 4 above and below the correct precision which is already calculated by our code.
 * then check the user answers against the correct answer written at the correct precision and wrong precision
-* then return helpful information to teach the student that the sigFigs or direct to one of DR.Krellers video on the subject*/
+* then return helpful information to teach the student that the sigFigs or direct to one of DR.Krellers video on the subject
+* this maybe the way we should have written this in the beggining.meh you live and you learn.*/
 $(document).ready(function ()
 {
 
@@ -92,12 +93,12 @@ function changeSolFormVol() {
     document.getElementById('msg-title').innerHTML = "Creating A Solution by Volumetric Transfer";
     document.getElementById('list').innerHTML =
         "<li>Enter the name for the solvent you will use in the solution <br><i>e.g water</i></li><br>"+
-        "<li>Enter the formula for the solute you will use in the solution <br><i>e.g CH3OH</i></li><br>"+
-        "<li>Enter the molecular weight of the solute in g/mL</li><br>"+
+        "<li>Enter the formula for the solute you will use in the solution <br><i>e.g NaCl</i></li><br>"+
+        "<li>Enter the molecular weight of the solute in g/mol</li><br>"+
         "<li>Enter the density of the solute in g/mL</li><br>"+
-        "<li>Enter the total volume of the solution</li><br>"+
-        "<li>Enter the concentration of the solution</li><br>"+
-        "<li>Enter the volume of solute you will add</li><br>";
+        "<li>Enter the desired total volume of the solution</li><br>"+
+        "<li>Enter the desired concentration of the solution</li><br>"+
+        "<li>Enter the your guess for the volume of solute to add to achieve your desired concentration</li><br>";
 }
 
 function changeSolFormGrav() {
@@ -108,8 +109,8 @@ function changeSolFormGrav() {
     document.getElementById('list').innerHTML =
         "<li>Enter the name for the solvent you will use in the solution <br><i>e.g water</i></li><br>"+
         "<li>Enter the formula for the solute you will use in the solution <br><i>e.g CH3OH</i></li><br>"+
-        "<li>Enter the molecular weight of the solute in g/mL</li><br>"+
-        "<li>Enter the solution volume</li><br>"+
-        "<li>Enter the solution concentration in mol/L</li><br>"+
-        "<li>Enter the mass of the solute to add</li><br>";
+        "<li>Enter the molecular weight of the solute in g/mol</li><br>"+
+        "<li>Enter the desired total volume of the solution</li><br>"+
+        "<li>Enter the desired concentration of the solution in mol/L</li><br>"+
+        "<li>Enter the your guess for the mass of solute to add to achieve your desired concentration</li><br>";
 }
