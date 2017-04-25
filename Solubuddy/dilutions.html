@@ -65,7 +65,7 @@
                                 <li>Enter the desired volume of the final solution</li><br>
                                 <li>Enter the desired final concentration in mol/L</li><br>
                                 <li>Enter the concentration of the solute in the stock solution in mol/L</li><br>
-                                <li>Enter the volume of the solute to add</li><br>
+                                <li>Enter your calculation for the volume of the solute to add</li><br>
                                 </ol>
                             </div>
                             <div id="msg-results"></div>
@@ -132,24 +132,29 @@
                                                 </tr>
                                                 <tr>
                                                     <td><label for="molarity-multiple" class="field">Molarity of Stock Solution:</label>
-                                                        <input type="number" name="molarity-multiple" id="molarity-multiple" class="field" placeholder="Step 3" /></td>
+                                                        <input type="number" min="0" step="any" name="molarity-multiple" id="molarity-multiple" class="field" placeholder="Step 3" /></td>
                                                     <td class="error" id="molarity-error-multiple"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="numberOfFlask">Number of Dilution Flasks:</label>
-                                                        <input type="number" name="numberOfFlask" id="numberOfFlask" placeholder="Step 4" /></td>
+                                                        <input type="number" min="0" step="any" name="numberOfFlask" id="numberOfFlask" placeholder="Step 4" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="flask-volume-multiple">Dilution Flask Volume (mL):</label>
-                                                        <input type="number" name="flask-volume-multiple" id="flask-volume-multiple" placeholder="Step 5" /></td>
+                                                        <input type="number" min="0" step="any" name="flask-volume-multiple" id="flask-volume-multiple" placeholder="Step 5" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="transfer-vol-multiple">Volume of Solution to Transfer:</label>
-                                                        <input type="number" name="transfer-vol-multiple" id="transfer-vol-multiple" placeholder="Step 6" /></td>
+                                                        <input type="number" min="0" step="any" name="transfer-vol-multiple" id="transfer-vol-multiple" placeholder="Step 6" /></td>
                                                         <td class="measure" id="volume-transfer-multiple"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td>
                                                     <td class="error"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label for="finalFlaskConcentration">Concentraion of Final Flask:</label>
+                                                        <input type="number" min="0" step="any" name="concentrationOfFinalFlask" id="finalFlaskConcentration" placeholder="Step 6" /></td>
+                                                    <td class="error" id="finalFlackConcentrationError"></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
