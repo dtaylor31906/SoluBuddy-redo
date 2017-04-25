@@ -71,10 +71,10 @@ function changeFormSingle() {
     document.getElementById('form-section-serial-dilution').style.display = "none";
     document.getElementById('msg-title').innerHTML = "Creating a Single Dilution";
     document.getElementById('list').innerHTML =
-        "<li>Enter the name for the solvent you will use in the solution <br><i>e.g water</i></li><br>"+
-        "<li>Enter the formula for the solute you will use in the solution <br><i>e.g CH3OH</i></li><br>"+
-        "<li>Enter the total volume of the solution</li><br>"+
-        "<li>Enter the solution concentration in mol/L</li><br>"+
-        "<li>Enter the solute concentration in mol/L</li><br>"+
+        "<li>Enter the name for the solvent you will in the dilution <br><i>e.g water</i></li><br>"+
+        "<li>Enter the name or formula for the solute in the stock solution <br><i>e.g HCl</i></li><br>"+
+        "<li>Enter the desired volume of the final solution</li><br>"+
+        "<li>Enter the desired final concentration in mol/L</li><br>"+
+        "<li>Enter the concentration of the solute in the stock solution in mol/L</li><br>"+
         "<li>Enter the volume of the solute to add</li><br>";
 }
