@@ -25,6 +25,16 @@ $(document).ready(function ()
         event.preventDefault();
         volumetricSubmit($("#VolForm-pure").serializeArray());
     });
+    $("#solute-vol").blur(function (event)
+    {
+        let moleculareWeight = molecularWeightCalculator($("#solute-vol").val());
+        $("#molecular-weight-vol").val(moleculareWeight);
+    });
+    $("#solute-grav").blur(function (event)
+    {
+        let moleculareWeight = molecularWeightCalculator($("#solute-grav").val());
+        $("#molecular-weight-grav").val(moleculareWeight);
+    });
 });
 //form is an array
 //creates an object from the values in the form
