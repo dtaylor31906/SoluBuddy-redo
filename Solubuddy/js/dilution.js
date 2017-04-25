@@ -13,7 +13,7 @@ function Dilution(solventName, soluteFormula, desiredVolume, desiredMolarity,stc
     this.precision = findPrecision(factors);
     Dilution.prototype.getVolume = function ()
     {
-        return volumeToAdd.toPrecision(this.precision);
+        return Number(volumeToAdd.toPrecision(this.precision));
     }
 }
 

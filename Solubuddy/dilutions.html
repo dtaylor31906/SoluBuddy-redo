@@ -72,42 +72,43 @@
                         </div>
                         <!-- radio buttons for form swap -->
                         <div class="form-area">
-                            <input type="radio" name="single" value="single" id="single" onclick="changeFormSingle()" checked><strong>Single Dilution</strong>
+                            <input type="radio" name="single" value="single" id="single" onload="changeFormSingle()" onclick="changeFormSingle()" checked><strong>Single Dilution</strong>
                             <input type="radio" name="multiple" value="multiple" id="multiple" onclick="changeFormMultiple()"><strong>Multiple Dilutions</strong>
                             <p>use the selection buttons to swap dilution types<p>
                                     <!-- single dilution form -->
                                     <div id="form-section-single-dilution">
-                                        <form id="SingleDilution" action="" method="post">
+                                        <form id="singleDilution" action="" method="post">
                                             <table>
                                                 <tr>
-                                                    <td><label for="solvent-single" class="field">Solvent Formula:</label>
-                                                        <input type="text" name="solvent" id="solvent-single" class="field" placeholder="Step 1" /></td>
+                                                    <td><label for="solventSingle" class="field">Solvent Name:</label>
+                                                        <input type="text" name="solvent" id="solventSingle" class="field" placeholder="Step 1" /></td>
                                                     <td class="error" id="solvent-error-single"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="solute-single" class="field">Solute Formula:</label>
-                                                        <input type="text" name="solute" id="solute-single" class="field" placeholder="Step 2" /></td>
+                                                    <td><label for="soluteSingle" class="field">Solute Name:</label>
+                                                        <input type="text" name="solute" id="soluteSingle" class="field" placeholder="Step 2" /></td>
                                                     <td class="error" id="solute-error-single"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="soln-vol-single" class="field">Solution Total Volume:</label>
-                                                        <input type="number" name="soln-vol-single" id="soln-vol-single" class="field" placeholder="Step 3" /></td>
-                                                    <td class="error" id="weight-error-single"></td>
+                                                    <td><label for="finalVolume" class="field">Desired Final Volume:</label>
+                                                        <input type="number" min="0" step="any" name="finalVolume" id="finalVolume" class="field" placeholder="Step 3" /></td>
+                                                    <td class="error" id="finalVolumeError"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="soln-concentration-single">Solution Concentration (mol/L):</label>
-                                                        <input type="number" name="soln-concentration-single" id="soln-concentration-single" placeholder="Step 4" /></td>
+                                                    <td><label for="finalConcentration">Desired Final Concentration (mol/L):</label>
+                                                        <input type="number" min="0" step="any" name="finalConcentration" id="finalConcentration" placeholder="Step 4" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="solute-concentration-single">Solute Concentration (mol/L):</label>
-                                                        <input type="number" name="solute-concentration-single" id="solute-concentration-single" placeholder="Step 5" /></td>
+                                                    <td><label for="stockSolutionConcentration">Concentration of Stock Solution (mol/L):</label>
+                                                        <input type="number" min="0" step="any" name="stockSolutionConcentration" id="stockSolutionConcentration" placeholder="Step 5" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="solute-add-single">Volume of Solute to Add</label>
-                                                        <input type="number" name="solute-add-single" id="solute-add-single" placeholder="Step 6" /></td>
+                                                    <td><label for="volumeToAddSingle">Volume of Stock Solution to Add</label>
+                                                        <input type="number" min="0" step="any" name="volumeToAddSingle" id="volumeToAddSingle" placeholder="Step 6" /></td>
                                                     <td class="measure" id="volume-solute-add-single"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td>
+                                                    <td class="error" id="volumeToAddError"></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
@@ -116,16 +117,16 @@
                                         </form>
                                     </div>
                                     <!-- multiple dilution form -->
-                                    <div id="form-section-multiple-dilution">
-                                        <form id="MultipleDilution" action="" method="post">
+                                    <div id="form-section-serial-dilution" style="display: none">
+                                        <form id="serialDilution" action="" method="post">
                                             <table>
                                                 <tr>
-                                                    <td><label for="solvent-multiple" class="field">Solvent Formula:</label>
+                                                    <td><label for="solvent-multiple" class="field">Solvent Name:</label>
                                                         <input type="text" name="solvent" id="solvent-multiple" class="field" placeholder="Step 1" /></td>
                                                     <td class="error" id="solvent-error-multiple"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="solute-multiple" class="field">Solute Formula:</label>
+                                                    <td><label for="solute-multiple" class="field">Solute Name:</label>
                                                         <input type="text" name="solute" id="solute-multiple" class="field" placeholder="Step 2" /></td>
                                                     <td class="error" id="solute-error-multiple"></td>
                                                 </tr>
@@ -135,8 +136,8 @@
                                                     <td class="error" id="molarity-error-multiple"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="flasks-multiple">Number of Dilution Flasks:</label>
-                                                        <input type="number" name="flasks-multiple" id="flasks-multiple" placeholder="Step 4" /></td>
+                                                    <td><label for="numberOfFlask">Number of Dilution Flasks:</label>
+                                                        <input type="number" name="numberOfFlask" id="numberOfFlask" placeholder="Step 4" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
@@ -187,10 +188,11 @@
     <script src="assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
-    <!-- radio button control and form swapping methods -->
-    <script src="js/changeFormSingle.js"></script>
-    <script src="js/changeFormMultiple.js"></script>
-
+    <script src="js/login.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/dilution.js"></script>
+    <script src="js/test/dilution.js"></script>
+    <script src="js/dilutionController.js"></script>
 </body>
 
 </html>
