@@ -1,8 +1,12 @@
 var count = 0;
-var tutorialCount;//helps to make sure tutorial is only showed once per login.
+
 initFireBase();
 function Login(){
-    tutorialCount = 0;
+    if(sessionStorage.getItem("tutorialCount") == null)
+    {
+        sessionStorage.setItem("tutorialCount",0);
+    }
+    //helps to make sure tutorial is only showed once per login.
     this.auth = firebase.auth();
     this.database = firebase.database();
     this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
@@ -19,23 +23,39 @@ Login.prototype.getUid = function () {
 function needTutorial (user) {
     this.checkBoxRef  = firebase.database().ref('users/'+user.uid);
     this.checkBoxRef.once('value')
-        .then( function(data) {
-
-            console.log(data.val());
-            var dataobject = data.toJSON();
-            console.log(dataobject.doNotShowTutorial);
-            isChecked = data.val().doNotShowTutorial;
-            if(!isChecked)
+        .then( function(data)
+        {
+            let tutorialCount = Number(sessionStorage.getItem("tutorialCount"));
+            if(!data.exists()&& tutorialCount < 1)//if there is no data
             {
                 let location = window.location.href;
 
                 var test = /tutorial/.test(location);
                 if(!test && tutorialCount < 1) {
-                    tutorialCount++;
+                    sessionStorage.setItem("tutorialCount",++tutorialCount);
                     window.location.href = 'tutorial.html';
 
                 }
+
             }
+            else
+            {
+                //var dataobject = data.toJSON();
+                isChecked = data.val().doNotShowTutorial;
+                if(!isChecked)
+                {
+                    let location = window.location.href;
+
+                    var test = /tutorial/.test(location);
+                    if(!test && tutorialCount < 1) {
+                        sessionStorage.setItem("tutorialCount",++tutorialCount);
+                        window.location.href = 'tutorial.html';
+
+                    }
+                    sessionStorage.setItem("tutorialCount",++tutorialCount);
+                }
+            }
+
 
         }, function(error) {
             console.log(error);
@@ -63,8 +83,10 @@ Login.prototype.onAuthStateChanged = function (user) {
 function logOutButton() {
     if($("#logoutButton"))
     {
+
         //check if closeTutorial check box has checked
         $("#logoutButton").click(function () {
+            sessionStorage.clear();
             firebase.auth().signOut().then(function() {
                 // Sign-out successful.
                 console.log("LOGGED OUT");

@@ -92,7 +92,8 @@ function changeFormMultiple() {
         "<li>Enter the volume of solution you will transfer</li><br>"+
         "<li>Enter your calculations for the concentration of the flask with the lowest molarity</li>";
 }
-function changeFormSingle() {
+function changeFormSingle()
+{
     document.getElementById('multiple').checked = false;
     document.getElementById('form-section-single-dilution').style.display = "block";
     document.getElementById('form-section-serial-dilution').style.display = "none";
