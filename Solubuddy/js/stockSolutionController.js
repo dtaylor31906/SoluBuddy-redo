@@ -48,7 +48,7 @@ function gravimetricSubmit(form)
     var userAnswer = navigableForm["mass-add-grav"];
     let calculatedVal = solution.getMass();
     var percentError = isCloseEnough(userAnswer,calculatedVal);//currently set to return true is answer is within .25%
-    let stckSolnError = $("#stckSolnGravError");
+    let stckSolnError = $("#msg-results");
     if(percentError === true)
     {
         stckSolnError.html("Your solution is correct we calculated: " + calculatedVal);
@@ -78,7 +78,7 @@ function volumetricSubmit(form)
     var userAnswer = navigableForm["vol-solute-added-vol"];
     let calculatedVal = solution.getVolume();
     var percentError = isCloseEnough(userAnswer,calculatedVal);//currently set to return true is answer is within .25%
-    let stckSolnError = $("#stckSolnVolError");
+    let stckSolnError = $("#msg-results");
     if(percentError === true)
     {
         stckSolnError.html("Your solution is correct we calculated: " + calculatedVal);

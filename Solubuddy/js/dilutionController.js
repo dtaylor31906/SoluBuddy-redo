@@ -13,7 +13,7 @@ function singleDilutionSubmit(form)
     var userAnswer = navigableForm["volumeToAddSingle"];
     let calculatedVal = solution.getVolume();
     var percentError = isCloseEnough(userAnswer,calculatedVal);//currently set to return true is answer is within .25%
-    let dilutionError = $("#volumeToAddError");
+    let dilutionError = $("#msg-results");
     if(percentError === true)
     {
         dilutionError.html("Your solution is correct we calculated: " + calculatedVal);
@@ -43,7 +43,7 @@ function serialDilutionSubmit(form)
     let solutionList = solution.getConcentrations();
     let calculatedVal = solutionList[solutionList.length -1];
     var percentError = isCloseEnough(userAnswer,calculatedVal);//currently set to return true is answer is within .25%
-    let serialDilutionError = $("#finalFlackConcentrationError");
+    let serialDilutionError = $("#msg-results");
     if(percentError === true)
     {
         serialDilutionError.html("Your solution is correct we calculated: " + calculatedVal);
