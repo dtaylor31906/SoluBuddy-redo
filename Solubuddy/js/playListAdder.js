@@ -16,7 +16,11 @@ var pid2013 = 'PLZMVsmxrKreHvEW476vV6LH4GVWtPoXD0'; //ListID of the youTube Play
 $(document).ready(function(){
 	$.get(
 		"https://www.googleapis.com/youtube/v3/channels",{
+<<<<<<< HEAD
 			part: 'contentDetails',
+=======
+			part: 'contentDetails', 
+>>>>>>> origin/master
 			forUsername: channelName,
 			key: 'AIzaSyCiS7ej-KGe66Ov2QOPdCAV_g4cLCDUbvc'}, //API KEY
 			function(data){
@@ -28,6 +32,7 @@ $(document).ready(function(){
 					getfall2013(pid2013);
 				})
 			}
+<<<<<<< HEAD
 
 	);
 
@@ -37,27 +42,52 @@ $(document).ready(function(){
 		$.get(
 		"https://www.googleapis.com/youtube/v3/playlistItems",{
 			part: 'snippet',
+=======
+					
+	);
+	
+	//Functions to retrieve 
+	
+	function getList(pid){
+		$.get(
+		"https://www.googleapis.com/youtube/v3/playlistItems",{
+			part: 'snippet', 
+>>>>>>> origin/master
 			maxResults: 12,
 			playlistId: pid,
 			key: 'AIzaSyCiS7ej-KGe66Ov2QOPdCAV_g4cLCDUbvc'},
 			function(data){
+<<<<<<< HEAD
 
 				var title_output;
 
+=======
+				
+				var title_output;
+				
+>>>>>>> origin/master
 				//Loop to grab each item, then logs it to the console before extracting the title and the video.
 				$.each(data.items, function(i, item) {
 					console.log(item);
 					videTitle = item.snippet.title;
 					vidID = item.snippet.resourceId.videoId;
+<<<<<<< HEAD
 
 					title_output = '<li><h3>'+videTitle+'</h3></li>';
 					vid_output = '<li><iframe height ="'+vidHeight+'" width ="'+vidWidth+'" src=\"//www.youtube.com/embed/'+vidID+'\"></iframe></li>';
 
+=======
+					
+					title_output = '<li><h3>'+videTitle+'</h3></li>';
+					vid_output = '<li><iframe height ="'+vidHeight+'" width ="'+vidWidth+'" src=\"//www.youtube.com/embed/'+vidID+'\"></iframe></li>';
+					
+>>>>>>> origin/master
 					//Appends the contents of the videos to the test.html file where the unordered list has id results
 					$('#play1').append(title_output);
 					$('#play1').append(vid_output);
 				})
 			}
+<<<<<<< HEAD
 
 		);
 	}
@@ -67,57 +97,111 @@ $(document).ready(function(){
 		$.get(
 		"https://www.googleapis.com/youtube/v3/playlistItems",{
 			part: 'snippet',
+=======
+					
+		);
+	}	
+	
+	
+	function getfall2013(pid){
+		$.get(
+		"https://www.googleapis.com/youtube/v3/playlistItems",{
+			part: 'snippet', 
+>>>>>>> origin/master
 			maxResults: 12,
 			playlistId: pid,
 			key: 'AIzaSyCiS7ej-KGe66Ov2QOPdCAV_g4cLCDUbvc'},
 			function(data){
+<<<<<<< HEAD
 
 				var title_output;
 
+=======
+				
+				var title_output;
+				
+>>>>>>> origin/master
 				//Loop to grab each item, then logs it to the console before extracting the title and the video.
 				$.each(data.items, function(i, item) {
 					console.log(item);
 					videTitle = item.snippet.title;
 					vidID = item.snippet.resourceId.videoId;
+<<<<<<< HEAD
 
 					title_output = '<li><h3>'+videTitle+'</h3></li>';
 					vid_output = '<li><iframe height ="'+vidHeight+'" width ="'+vidWidth+'" src=\"//www.youtube.com/embed/'+vidID+'\"></iframe></li>';
 
+=======
+					
+					title_output = '<li><h3>'+videTitle+'</h3></li>';
+					vid_output = '<li><iframe height ="'+vidHeight+'" width ="'+vidWidth+'" src=\"//www.youtube.com/embed/'+vidID+'\"></iframe></li>';
+					
+>>>>>>> origin/master
 					//Appends the contents of the videos to the test.html file where the unordered list has id results
 					$('#play3').append(title_output);
 					$('#play3').append(vid_output);
 				})
 			}
+<<<<<<< HEAD
 
 		);
 	}
+=======
+					
+		);
+	}	
+>>>>>>> origin/master
 
 	function getfall2012(pid){
 		$.get(
 		"https://www.googleapis.com/youtube/v3/playlistItems",{
+<<<<<<< HEAD
 			part: 'snippet',
+=======
+			part: 'snippet', 
+>>>>>>> origin/master
 			maxResults: 20,
 			playlistId: pid,
 			key: 'AIzaSyCiS7ej-KGe66Ov2QOPdCAV_g4cLCDUbvc'},
 			function(data){
+<<<<<<< HEAD
 
 				var title_output;
 
+=======
+				
+				var title_output;
+				
+>>>>>>> origin/master
 				//Loop to grab each item, then logs it to the console before extracting the title and the video.
 				$.each(data.items, function(i, item) {
 					console.log(item);
 					videTitle = item.snippet.title;
 					vidID = item.snippet.resourceId.videoId;
+<<<<<<< HEAD
 
 					title_output = '<li><h3>'+videTitle+'</h3></li>';
 					vid_output = '<li><iframe height ="'+vidHeight+'" width ="'+vidWidth+'" src=\"//www.youtube.com/embed/'+vidID+'\"></iframe></li>';
 
+=======
+					
+					title_output = '<li><h3>'+videTitle+'</h3></li>';
+					vid_output = '<li><iframe height ="'+vidHeight+'" width ="'+vidWidth+'" src=\"//www.youtube.com/embed/'+vidID+'\"></iframe></li>';
+					
+>>>>>>> origin/master
 					//Appends the contents of the videos to the test.html file where the unordered list has id results
 					$('#play2').append(title_output);
 					$('#play2').append(vid_output);
 				})
 			}
+<<<<<<< HEAD
 
 		);
 	}
 });
+=======
+					
+		);
+	}	
+});
+>>>>>>> origin/master
