@@ -6,8 +6,8 @@ function molecularWeightCalculator(formula)
     var symbolMap = new Map();//key = symbol, value = apperance in formula
     var weightMap = new Map();//key = symbol, value = weight
     var capitalLetter = /[A-Z]/;
-    var lowerCase = /a-z/;
-    var digit = /0-9/;
+    var lowerCase = /[a-z]/;
+    var digit = /[0-9]/;
     var usedSymbols = [];
     var currentSymbol;
     var currentCount;
@@ -36,11 +36,15 @@ function molecularWeightCalculator(formula)
     function calculateWeight() 
     {
         var total = 0;
+        var factors = [];
         symbolMap.forEach(function (value,key,map)
         {
-            total+= (weightMap.get(key)*(value));//multiply the values of the weight map and symbolmap at common key
+            let weight = weightMap.get(key);
+            total+= (weight*(value));//multiply the values of the weight map and symbolmap at common key
+            factors.push(weight);
         })
-        return total;
+        let precision = findPrecision(factors)
+        return Number(total.toPrecision(precision));
     }
     function getSymbolMap()
     {
@@ -57,7 +61,7 @@ function molecularWeightCalculator(formula)
                     {
                         onFindSymbol();
                     }
-                    else if(formula.charAt(i+1).search(lowerCaseLetter) != -1)//if the char after a capital letter is a lowercase
+                    else if(formula.charAt(i+1).search(lowerCase) != -1)//if the char after a capital letter is a lowercase
                     {
                         //add the letter as part of current symbol
                         currentSymbol = currentSymbol+ formula.charAt(i+1);
@@ -70,7 +74,7 @@ function molecularWeightCalculator(formula)
                         {
                             onFindSymbolWithValue(i+2);
                         }
-                        else if (formula.charAt(i+2).search(capitalLetter)!=1)//if the symbol after a lowercase letter is a capital
+                        else if (formula.charAt(i+2).search(capitalLetter)!= -1)//if the symbol after a lowercase letter is a capital
                         {
                             //add the symbol to the map with a value of 1
                             onFindSymbol();
@@ -82,9 +86,13 @@ function molecularWeightCalculator(formula)
                             continue;
                         }
                     }
-                    else if (formula.charAt(i+1).search(digit)) //if the char after a capital leter is a number
+                    else if (formula.charAt(i+1).search(digit)!= -1) //if the char after a capital leter is a number
                     {
                         onFindSymbolWithValue(i+1);
+                    }
+                    else if (formula.charAt(i+1).search(capitalLetter) != -1)//if the char after capital letter is another capital
+                    {
+                        onFindSymbol();
                     }
                     else
                     {
@@ -105,20 +113,21 @@ function molecularWeightCalculator(formula)
     {
         for(var i =startIndex ;i < formula.length ;i++)
         {
-            if(formula.charAt(i).search(digit)==-1)//if char is not a number
+            if(formula.charAt(i).search(digit)== -1)//if char is not a number
             {
                 //return the chars from startindex to i-1 as a number
-                var number = formula.substring(startIndex,i-1);
+                var number = formula.substring(startIndex,i);
                 return parseInt(number);
             }
         }
+        return parseInt(formula.substring(startIndex));
     }
     //helper function
     function onFindSymbolWithValue(startIndex)
     {
         currentCount = getCount(formula,startIndex);
         //add symbol to map
-        if(usedSymbols.contains(currentSymbol))//if the current symbol has been found already
+        if(usedSymbols.includes(currentSymbol))//if the current symbol has been found already
         {
             //add the count in the map
             symbolMap.set(currentSymbol,symbolMap.get(currentSymbol)+currentCount);
@@ -139,7 +148,7 @@ function molecularWeightCalculator(formula)
     function onFindSymbol()
     {
         //add the symbol to the map.
-        if(usedSymbols.contains(currentSymbol))//if the current symbol has been found already
+        if(usedSymbols.includes(currentSymbol))//if the current symbol has been found already
         {
             //add 1  to the count in the map
             symbolMap.set(currentSymbol,symbolMap.get(currentSymbol)+1);

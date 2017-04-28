@@ -28,7 +28,7 @@ function findPrecision(factors)
     var minSignificantFigures = 0;
     for(var i = 0; i< factors.length; i++)
     {
-        if(i = 0)//first iteration
+        if(i === 0)//first iteration
         {
             minSignificantFigures = countSigFigs(factors[i]);
             continue;
@@ -38,4 +38,16 @@ function findPrecision(factors)
             minSignificantFigures = countSigFigs(factors[i]);
         }
     }
+    return minSignificantFigures;
+}
+//returns ture if the parameters are with .25% of each other.
+function isCloseEnough(userVal, calculatedVal)
+{
+    var diffrence = Math.abs(calculatedVal - userVal) ;
+    var decimal = diffrence/calculatedVal;
+    var percent = decimal *100;
+    if (percent <= .25)
+        return true;
+    else
+        return percent;
 }

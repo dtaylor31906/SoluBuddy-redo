@@ -81,9 +81,16 @@ div#main-login {
 }
 
 div#main-tutorial {
-  display: none;
+  display: block;
   text-align: justify;
   font-weight: bold;
+}
+
+div#firebaseui-auth-container {
+  display: block;
+  position: absolute;
+  margin-left: 30%;
+  margin-top: 10%;
 }
 
 div.form-area {

@@ -13,18 +13,20 @@ function Dilution(solventName, soluteFormula, desiredVolume, desiredMolarity,stc
     this.precision = findPrecision(factors);
     Dilution.prototype.getVolume = function ()
     {
-        return volumeToAdd.toPrecision(this.precision);
+        return Number(volumeToAdd.toPrecision(this.precision));
     }
 }
 
 function SerialDilution(solventName, soluteFormula, stckSolnMolarity,numberOfDilutions,volumeOfFlask,volumeTransfered)
 {
+    var factors = [stckSolnMolarity,volumeOfFlask,volumeTransfered];
     this.solventName = solventName;
     this.soluteFormula = soluteFormula;
     this.stckSolnMolarity = stckSolnMolarity;
     this.numberOfDilutions = numberOfDilutions;
     this.volumeOfFlask = volumeOfFlask;
     this.volumeTransfered = volumeTransfered;
+    this.precision = findPrecision(factors);
 
     this.dilutionFactor = volumeOfFlask/volumeTransfered;
 
@@ -34,11 +36,14 @@ function SerialDilution(solventName, soluteFormula, stckSolnMolarity,numberOfDil
     SerialDilution.prototype.getConcentrations = function ()
     {
         var concetrations = [];
+        let flaskMolarity;
         for(var i = 0; i < numberOfDilutions; i++)
         {
             //this is the formula for calculating the concetration of a flask in the series.
-            concetrations[i] = stckSolnMolarity*Math.pow((1/this.dilutionFactor),(i));
+            flaskMolarity = stckSolnMolarity*Math.pow((1/this.dilutionFactor),(i));
+            concetrations[i] = Number(flaskMolarity.toPrecision(this.precision));
         }
+        return concetrations;
     }
 }
 

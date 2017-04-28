@@ -31,8 +31,8 @@
                             <ul>
                                 <li class="current_page_item"><a href="index.html">Home</a></li>
                                 <li><a href="educational-links.html">Educational Links</a></li>
-                                <li><a href="saved-solutions.html">Saved Solutions</a></li>
-                                <li><a href="#">Account</a></li>
+<!--                                <li><a href="saved-solutions.html">Saved Solutions</a></li> -->
+<!--                                <li><a href="#">Account</a></li> -->
                                 <li id="logoutButton"><a href="#">Log Out</a></li>
                             </ul>
                         </nav>
@@ -60,13 +60,13 @@
                             </div>
                             <div id="msg-instruction">
                               <ol type="1" !important id="list">
-                                <li>Enter the name for the solvent you will use in the solution <br><i>e.g water</i></li><br>
-                                <li>Enter the formula for the solute you will use in the solution <br><i>e.g CH3OH</i></li><br>
-                                <li>Enter the molecular weight of the solute in g/mL</li><br>
-                                <li>Enter the density of the solute in g/mL</li><br>
-                                <li>Enter the total volume of the solution</li><br>
-                                <li>Enter the concentration of the solution</li><br>
-                                <li>Enter the volume of solute you will add</li>
+                                  <li>Enter the name for the solvent you will use in the solution <br><i>e.g water</i></li><br>
+                                  <li>Enter the formula for the solute you will use in the solution <br><i>e.g NaCl</i></li><br>
+                                  <li>Enter the molecular weight of the solute in g/mol</li><br>
+                                  <li>Enter the density of the solute in g/mL</li><br>
+                                  <li>Enter the desired total volume of the solution</li><br>
+                                  <li>Enter the desired concentration of the solution</li><br>
+                                  <li>Enter the your guess for the volume of solute to add to achieve your desired concentration</li><br>
                                 </ol>
                             </div>
                             <div id="msg-results"></div>
@@ -81,7 +81,7 @@
                                         <form id="GravForm-pure" action="" method="post">
                                             <table>
                                                 <tr>
-                                                    <td><label for="solvent-grav" class="field">Solvent Formula:</label>
+                                                    <td><label for="solvent-grav" class="field">Solvent Name:</label>
                                                         <input type="text" name="solvent" id="solvent-grav" class="field" placeholder="Step 1" /></td>
                                                     <td class="error" id="solvent-error-grav"></td>
                                                 </tr>
@@ -92,23 +92,24 @@
                                                 </tr>
                                                 <tr>
                                                     <td><label for="molecular-weight-grav" class="field">Solute Molecular Weight:</label>
-                                                        <input type="number" name="molecular-weight-grav" id="molecular-weight-grav" class="field" placeholder="Step 3" /></td>
+                                                        <input type="number" min="0" step="any" name="molecular-weight-grav" id="molecular-weight-grav" class="field" placeholder="Step 3" /></td>
                                                     <td class="error" id="weight-error-grav"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="sol-volume-grav">Solution Volume:</label>
-                                                        <input type="number" name="sol-volume-grav" id="sol-volume-grav" placeholder="Step 4" /></td>
+                                                        <input type="number" min="0" step="any" name="sol-volume-grav" id="sol-volume-grav" placeholder="Step 4" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="soln-concentration-grav">Solution Concentration (mol/L):</label>
-                                                        <input type="number" name="soln-concentration-grav" id="soln-concentration-grav" placeholder="Step 5" /></td>
+                                                        <input type="number" min="0" step="any" name="soln-concentration-grav" id="soln-concentration-grav" placeholder="Step 5" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="mass-solute-added-grav">Mass of Solute to Add</label>
-                                                        <input type="number" name="mass-solute-added-grav" id="mass-solute-added-grav" placeholder="Step 6" /></td>
+                                                        <input type="number" min="0" step="any" name="mass-solute-added-grav" id="mass-solute-added-grav" placeholder="Step 6" /></td>
                                                     <td class="measure" id="mass-solute-added-measure-grav"><select><option value="gram" selected>g</option><option value="milligram">mg</option></select></td>
+                                                    <td class="error" id="massToAddError"></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
@@ -121,7 +122,7 @@
                                         <form id="VolForm-pure" action="" method="post">
                                             <table>
                                                 <tr>
-                                                    <td><label for="solvent-vol" class="field">Solvent Formula:</label>
+                                                    <td><label for="solvent-vol" class="field">Solvent Name:</label>
                                                         <input type="text" name="solvent" id="solvent-vol" class="field" placeholder="Step 1" /></td>
                                                     <td class="error" id="solvent-error-vol"></td>
                                                 </tr>
@@ -132,28 +133,30 @@
                                                 </tr>
                                                 <tr>
                                                     <td><label for="molecular-weight-vol" class="field">Solute Molecular Weight (g/mL):</label>
-                                                        <input type="number" name="molecular-weight-vol" id="molecular-weight-vol" class="field" placeholder="Step 3" /></td>
+                                                        <input type="number" min="0" step="any" name="molecular-weight-vol" id="molecular-weight-vol" class="field" placeholder="Step 3" /></td>
                                                     <td class="error" id="weight-error-vol"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="sol-density-vol">Density of Pure Solute (g/ML):</label>
-                                                        <input type="number" name="sol-density-vol" id="sol-density-vol" placeholder="Step 4" /></td>
+                                                        <input type="number" min="0" step="any" name="sol-density-vol" id="sol-density-vol" placeholder="Step 4" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="soln-volume-vol">Solution Total Volume (mL):</label>
-                                                        <input type="number" name="soln-volume-vol" id="soln-volume-vol" placeholder="Step 5" /></td>
+                                                        <input type="number" min="0" step="any" name="soln-volume-vol" id="soln-volume-vol" placeholder="Step 5" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="soln-concentration-vol">Solution Concentration (mol/L):</label>
-                                                        <input type="number" name="soln-concentration-vol" id="soln-concentration-vol" placeholder="Step 6" /></td>
+                                                        <input type="number" min="0" step="any" name="soln-concentration-vol" id="soln-concentration-vol" placeholder="Step 6" /></td>
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
+
                                                     <td><label for="vol-solute-added-vol">Volume of Solute to Add</label>
-                                                        <input type="number" name="vol-solute-added-vol" id="vol-solute-added-vol" placeholder="Step 7" /></td>
+                                                        <input type="number" min="0" step="any" name="vol-solute-added-vol" id="vol-solute-added-vol" placeholder="Step 7" /></td>
                                                     <td class="measure" id="vol-solute-added-measure-vol"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td>
+                                                    <td class="error" id="volumeToAddError"></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
@@ -192,8 +195,12 @@
     <script src="assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
-    <script src="js/changeSolFormVol.js"></script>
-    <script src="js/changeSolFormGrav.js"></script>
+    <script src="js/solution.js"></script>   <!--the code holding the libraryish stuff-->
+    <script src="js/utilities.js"></script><!--the code holding the libraryish stuff-->
+    <script src="js/molecularWeightCalculator.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/solutionsController.js"></script>
+
 
 </body>
 
