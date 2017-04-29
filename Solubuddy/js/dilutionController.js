@@ -84,13 +84,13 @@ function changeFormMultiple() {
     document.getElementById('form-section-serial-dilution').style.display = "block";
     document.getElementById('msg-title').innerHTML = "Creating Multiple Dilutions by Transfer";
     document.getElementById('list').innerHTML =
-        "<li>Enter the name for the solvent you will in the dilution <br><i>e.g water</i></li><br>"+
+        "<li>Enter the name for the solvent you will use in the dilution <br><i>e.g water</i></li><br>"+
         "<li>Enter the name or formula for the solute in the stock solution <br><i>e.g HCl</i></li><br>"+
         "<li>Enter the concentration of the solute in the stock solution in mol/L</li><br>"+
         "<li>Enter the quantity of dilution flasks you will use</li><br>"+
         "<li>Enter the volume of the flasks mL</li><br>"+
         "<li>Enter the volume of solution you will transfer</li><br>"+
-        "<li>Enter your calculations for the concentration of the flask with the lowest molarity</li>";
+        "<li>Enter your calculation result for the concentration of the flask with the lowest molarity</li><br>";
 }
 function changeFormSingle()
 {
@@ -99,10 +99,10 @@ function changeFormSingle()
     document.getElementById('form-section-serial-dilution').style.display = "none";
     document.getElementById('msg-title').innerHTML = "Creating a Single Dilution";
     document.getElementById('list').innerHTML =
-        "<li>Enter the name for the solvent you will in the dilution <br><i>e.g water</i></li><br>"+
+        "<li>Enter the name for the solvent you will use in the dilution <br><i>e.g water</i></li><br>"+
         "<li>Enter the name or formula for the solute in the stock solution <br><i>e.g HCl</i></li><br>"+
         "<li>Enter the desired volume of the final solution</li><br>"+
         "<li>Enter the desired final concentration in mol/L</li><br>"+
         "<li>Enter the concentration of the solute in the stock solution in mol/L</li><br>"+
-        "<li>Enter your calculation for the volume of the solute to add</li><br>";
+        "<li>Enter your calculation result for the volume of the solute to add</li><br>";
 }

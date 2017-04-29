@@ -108,7 +108,7 @@ function changeSolFormVol() {
         "<li>Enter the density of the solute in g/mL</li><br>"+
         "<li>Enter the desired total volume of the solution</li><br>"+
         "<li>Enter the desired concentration of the solution</li><br>"+
-        "<li>Enter the your guess for the volume of solute to add to achieve your desired concentration</li><br>";
+        "<li>Enter your calculation result for the volume of solute to add to achieve desired concentration</li><br>";
 }
 
 function changeSolFormGrav() {
@@ -122,5 +122,5 @@ function changeSolFormGrav() {
         "<li>Enter the molecular weight of the solute in g/mol</li><br>"+
         "<li>Enter the desired total volume of the solution</li><br>"+
         "<li>Enter the desired concentration of the solution in mol/L</li><br>"+
-        "<li>Enter the your guess for the mass of solute to add to achieve your desired concentration</li><br>";
+        "<li>Enter your calculation result for the mass of solute to add to achieve desired concentration</li><br>";
 }

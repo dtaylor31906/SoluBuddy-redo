@@ -102,7 +102,7 @@ function changeStockFormGrav() {
         "<li>Enter the desired total volume</li><br>"+
         "<li>Enter the solution concentration in mol/L</li><br>"+
         "<li>Enter the mass percent of the solute found in the stock<i> (number only)</i></li><br>"+
-        "<li>Enter your calculation for the mass of solute you will add</li>";
+        "<li>Enter your calculation result for the mass of solute you will add</li>";
 }
 function changeStockFormVol() {
     document.getElementById('gravimetric').checked = false;
@@ -117,5 +117,5 @@ function changeStockFormVol() {
         "<li>Enter the solution concentration in mol/L</li><br>"+
         "<li>Enter the mass percent of the solute found in the stock<i> (number only)</i></li><br>"+
         "<li>Enter the density of the solute</li><br>"+
-        "<li>Enter your calculation for the volume of solute you will add</li>";
+        "<li>Enter your calculation result for the volume of solute you will add</li>";
 }
