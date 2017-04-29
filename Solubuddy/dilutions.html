@@ -10,6 +10,10 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/vex.combined.min.js"></script>
+    <link rel="stylesheet" href="assets/css/vex.css" />
+    <link rel="stylesheet" href="assets/css/vex-theme-default.css" />
 </head>
 
 <body class="homepage">
@@ -45,6 +49,9 @@
         <div id="main-wrapper">
             <div class="wrapper style1">
                 <div class="inner">
+                  
+                  <!--script holder for vex alert popup-->
+                  <script>vex.defaultOptions.className = 'vex-theme-default';</script>
 
                     <!-- Form display and message area -->
                     <section class="container box feature1">
@@ -69,7 +76,6 @@
                                 </ol>
                                 <a href='https://www.youtube.com/watch?v=0EAbaF330xI' target="_blank">Click here to see a video about dilutions</a>
                             </div>
-                            <div id="msg-results"></div>
                         </div>
                         <!-- radio buttons for form swap -->
                         <div class="form-area">

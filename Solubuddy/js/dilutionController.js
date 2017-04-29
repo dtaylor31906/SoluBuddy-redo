@@ -13,16 +13,13 @@ function singleDilutionSubmit(form)
     var userAnswer = navigableForm["volumeToAddSingle"];
     let calculatedVal = solution.getVolume();
     var percentError = isCloseEnough(userAnswer,calculatedVal);//currently set to return true is answer is within .25%
-    let dilutionError = $("#msg-results");
     if(percentError === true)
     {
-        dilutionError.html("Your solution is correct we calculated: " + calculatedVal);
-        dilutionError.css("color","blue");
+        vex.dialog.alert("Your solution is correct we calculated: " + calculatedVal);
     }
     else if(typeof percentError == "number" && percentError > .25)
     {
-        dilutionError.html("Your Answer is "+ percentError.toFixed(2) +"% off.");
-        dilutionError.css("color","red");
+        vex.dialog.alert("Your Answer is "+ percentError.toFixed(2) +"% off.");
     }
 }
 function serialDilutionSubmit(form)
@@ -43,16 +40,13 @@ function serialDilutionSubmit(form)
     let solutionList = solution.getConcentrations();
     let calculatedVal = solutionList[solutionList.length -1];
     var percentError = isCloseEnough(userAnswer,calculatedVal);//currently set to return true is answer is within .25%
-    let serialDilutionError = $("#msg-results");
     if(percentError === true)
     {
-        serialDilutionError.html("Your solution is correct we calculated: " + calculatedVal);
-        serialDilutionError.css("color","blue");
+        vex.dialog.alert("Your solution is correct we calculated: " + calculatedVal);
     }
     else if(typeof percentError == "number" && percentError > .25)
     {
-        serialDilutionError.html("Your Answer is "+ percentError.toFixed(2) +"% off.");
-        serialDilutionError.css("color","red");
+        vex.dialog.alert("Your Answer is "+ percentError.toFixed(2) +"% off.");
     }
 }
 $(document).ready(function ()

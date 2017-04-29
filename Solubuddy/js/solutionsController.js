@@ -55,16 +55,13 @@ function gravimetricSubmit(form)
     let userAnswer = navigableForm["mass-solute-added-grav"];
     let percentError = isCloseEnough(userAnswer,solution.getMass());
 
-    let massToAddError = $("#msg-results");
     if(percentError === true)
     {
-        massToAddError.html("Your solution is correct we calculated: " + solution.getMass());
-        massToAddError.css("color","blue");
+        vex.dialog.alert("Your solution is correct we calculated: " + solution.getMass());
     }
     else if(typeof percentError == "number" && percentError > .25)
     {
-        massToAddError.html("Your Answer is "+ percentError.toFixed(2) +"% off.");
-        massToAddError.css("color","red");
+        vex.dialog.alert("Your Answer is "+ percentError.toFixed(2) +"% off.");
     }
 }
 
@@ -84,16 +81,13 @@ function volumetricSubmit(form)
     //check user answer against calculations
     var userAnswer = navigableForm["vol-solute-added-vol"];
     var percentError = isCloseEnough(userAnswer,solution.getVolume());//currently set to return true is answer is within .25%
-    let volumeToAddError = $("#msg-results");
     if(percentError === true)
     {
-        volumeToAddError.html("Your solution is correct we calculated: " + solution.getVolume());
-        volumeToAddError.css("color","blue");
+        vex.dialog.alert("Your solution is correct we calculated: " + solution.getVolume());
     }
     else if(typeof percentError == "number" && percentError > .25)
     {
-        volumeToAddError.html("Your Answer is "+ percentError.toFixed(2) +"% off.");
-        volumeToAddError.css("color","red");
+        vex.dialog.alert("Your Answer is "+ percentError.toFixed(2) +"% off.");
     }
 }
 function changeSolFormVol() {

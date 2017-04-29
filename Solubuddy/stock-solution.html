@@ -10,6 +10,10 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/vex.combined.min.js"></script>
+    <link rel="stylesheet" href="assets/css/vex.css" />
+    <link rel="stylesheet" href="assets/css/vex-theme-default.css" />
 </head>
 
 <body class="homepage">
@@ -46,6 +50,9 @@
             <div class="wrapper style1">
                 <div class="inner">
 
+                  <!--script holder for vex alert popup-->
+                  <script>vex.defaultOptions.className = 'vex-theme-default';</script>
+
                     <!-- Form and message display area -->
                     <section class="container box feature1">
                         <div class="row">
@@ -70,7 +77,6 @@
                                 <li>Enter your calculation result for the volume of solute you will add</li>
                                 </ol>
                             </div>
-                            <div id="msg-results"></div>
                         </div>
                         <!-- form selection radio buttons -->
                         <div class="form-area">
