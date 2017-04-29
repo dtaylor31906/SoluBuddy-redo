@@ -31,8 +31,8 @@
                             <ul>
                                 <li class="current_page_item"><a href="index.html">Home</a></li>
                                 <li><a href="educational-links.html">Educational Links</a></li>
-<!--                                <li><a href="saved-solutions.html">Saved Solutions</a></li>  -->
-<!--                                <li><a href="#">Account</a></li>  -->
+                                <!--                                <li><a href="saved-solutions.html">Saved Solutions</a></li>  -->
+                                <!--                                <li><a href="#">Account</a></li>  -->
                                 <li id="logoutButton"><a href="#">Log Out</a></li>
                             </ul>
                         </nav>
@@ -64,7 +64,8 @@
                             <input type="radio" name="external" value="external" id="external" onclick="changeFormExternal()" checked><strong>External Method</strong>
                             <input type="radio" name="internal" value="internal" id="internal" onclick="changeFormInternal()"><strong>Internal Method</strong>
                             <input type="radio" name="addition" value="addition" id="addition" onclick="changeFormAddition()"><strong>Addition Method</strong>
-                            <p>use the selection buttons to swap solution types<p>
+                            <p>use the selection buttons to swap solution types
+                                <p>
                                     <!-- External calibraion method form -->
                                     <div id="form-section-external">
                                         <form id="CalibExternal" action="" method="post">
@@ -95,7 +96,7 @@
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="flask-volume-external">Total Flasks Volume</label>
+                                                    <td><label for="flask-volume-external">Total Flasks Volume (mL):</label>
                                                         <input type="number" name="flask-volume-external" id="flask-volume-external" placeholder="Total Volume of Flasks (mL)" /></td>
                                                 </tr>
                                                 <tr>
@@ -134,7 +135,7 @@
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="name-internal">Internal Standard Name</label>
+                                                    <td><label for="name-internal">Internal Standard Name:</label>
                                                         <input type="number" name="name-internal" id="name-internal" placeholder="Internal Standard Name" /></td>
                                                 </tr>
                                                 <tr>
@@ -173,9 +174,9 @@
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="unknown-vol-addition">Volume Unknown per Flask</label>
+                                                    <td><label for="unknown-vol-addition">Volume Unknown per Flask (mL)</label>
                                                         <input type="number" name="unknown-vol-addition" id="unknown-vol-addition" placeholder="Volume of Unknown per Flask" /></td>
-                                                    <td class="measure" id="unknown-vol-measure-addition"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td>
+                                                    <!--                                                    <td class="measure" id="unknown-vol-measure-addition"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td> -->
                                                 </tr>
                                                 <tr>
                                                     <td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
@@ -214,7 +215,8 @@
     <script src="assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
-    <script src="js/login.js"></script> <!--login script-->
+    <script src="js/login.js"></script>
+    <!--login script-->
     <!--radio button control and form display swap methods -->
     <script type="text/javascript">
         function changeFormInternal() {

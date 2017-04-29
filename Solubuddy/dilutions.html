@@ -31,8 +31,8 @@
                             <ul>
                                 <li class="current_page_item"><a href="index.html">Home</a></li>
                                 <li><a href="educational-links.html">Educational Links</a></li>
-<!--                                <li><a href="saved-solutions.html">Saved Solutions</a></li>  -->
-<!--                                <li><a href="#">Account</a></li>  -->
+                                <!--                                <li><a href="saved-solutions.html">Saved Solutions</a></li>  -->
+                                <!--                                <li><a href="#">Account</a></li>  -->
                                 <li id="logoutButton"><a href="#">Log Out</a></li>
                             </ul>
                         </nav>
@@ -59,13 +59,13 @@
                                 <h3 id="msg-title">Creating a Single Dilution</h3>
                             </div>
                             <div id="msg-instruction">
-                              <ol type="1" !important id="list">
-                                <li>Enter the name for the solvent you will in the dilution <br><i>e.g water</i></li><br>
-                                <li>Enter the name or formula for the solute in the stock solution <br><i>e.g HCl</i></li><br>
-                                <li>Enter the desired volume of the final solution</li><br>
-                                <li>Enter the desired final concentration in mol/L</li><br>
-                                <li>Enter the concentration of the solute in the stock solution in mol/L</li><br>
-                                <li>Enter your calculation for the volume of the solute to add</li><br>
+                                <ol type="1" !important id="list">
+                                    <li>Enter the name for the solvent you will in the dilution <br><i>e.g water</i></li><br>
+                                    <li>Enter the name or formula for the solute in the stock solution <br><i>e.g HCl</i></li><br>
+                                    <li>Enter the desired volume of the final solution</li><br>
+                                    <li>Enter the desired final concentration in mol/L</li><br>
+                                    <li>Enter the concentration of the solute in the stock solution in mol/L</li><br>
+                                    <li>Enter your calculation for the volume of the solute to add</li><br>
                                 </ol>
                             </div>
                             <div id="msg-results"></div>
@@ -74,7 +74,8 @@
                         <div class="form-area">
                             <input type="radio" name="single" value="single" id="single" onload="changeFormSingle()" onclick="changeFormSingle()" checked><strong>Single Dilution</strong>
                             <input type="radio" name="multiple" value="multiple" id="multiple" onclick="changeFormMultiple()"><strong>Multiple Dilutions</strong>
-                            <p>use the selection buttons to swap dilution types<p>
+                            <p>use the selection buttons to swap dilution types
+                                <p>
                                     <!-- single dilution form -->
                                     <div id="form-section-single-dilution">
                                         <form id="singleDilution" action="" method="post">
@@ -105,13 +106,12 @@
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="volumeToAddSingle">Volume of Stock Solution to Add</label>
+                                                    <td><label for="volumeToAddSingle">Volume of Stock Solution to Add (mL):</label>
                                                         <input type="number" min="0" step="any" name="volumeToAddSingle" id="volumeToAddSingle" placeholder="Step 6" /></td>
-                                                    <td class="measure" id="volume-solute-add-single"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td>
-                                                    <td class="error" id="volumeToAddError"></td>
+                                                    <!--                                                    <td class="measure" id="volume-solute-add-single"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td> -->
                                                 </tr>
                                                 <tr>
-                                                    <td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
+                                                    <td class="frm_btns"><input type="reset" name="clr_button" class="alt" value="Clear" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
                                                 </tr>
                                             </table>
                                         </form>
@@ -146,18 +146,17 @@
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><label for="transfer-vol-multiple">Volume of Solution to Transfer:</label>
+                                                    <td><label for="transfer-vol-multiple">Volume of Solution to Transfer (mL):</label>
                                                         <input type="number" min="0" step="any" name="transfer-vol-multiple" id="transfer-vol-multiple" placeholder="Step 6" /></td>
-                                                        <td class="measure" id="volume-transfer-multiple"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td>
+                                                    <!--                                                        <td class="measure" id="volume-transfer-multiple"><select><option value="mL" selected>mL</option><option value="&micro;L">&micro;L</option><option value="L">L</option></select></td> -->
                                                     <td class="error"></td>
                                                 </tr>
                                                 <tr>
                                                     <td><label for="finalFlaskConcentration">Concentraion of Final Flask:</label>
                                                         <input type="number" min="0" step="any" name="concentrationOfFinalFlask" id="finalFlaskConcentration" placeholder="Step 6" /></td>
-                                                    <td class="error" id="finalFlackConcentrationError"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="frm_btns"><input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
+                                                    <td class="frm_btns"><input type="reset" name="clr_button" class="alt" value="Clear" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" name="btn_next" class="alt" value="Calculate" /></td>
                                                 </tr>
                                             </table>
                                         </form>

@@ -14,90 +14,91 @@
 </head>
 
 <body class="homepage">
-<div id="page-wrapper">
+    <div id="page-wrapper">
 
-    <!-- Header -->
-    <div id="header-wrapper">
-        <div class="container">
+        <!-- Header -->
+        <div id="header-wrapper">
+            <div class="container">
 
-            <!-- Header -->
-            <header id="header">
+                <!-- Header -->
+                <header id="header">
+                    <div class="inner">
+
+                        <!-- Logo -->
+                        <h1><a href="index.html" id="logo">SOLU<strong>BUDDY</strong></a></h1>
+
+                        <!-- Nav -->
+                        <nav id="nav">
+                            <ul>
+                                <!--                            <li><a href="educational-links.html">Educational Links</a></li> -->
+                                <!--                            <li><a href="saved-solutions.html">Saved Solutions</a></li> -->
+                                <!--                            <li><a href="#">Account</a></li> -->
+                                <li id="logoutButton"><a href="#">Log Out</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+        </div>
+
+        <!-- Main Wrapper -->
+        <div id="main-wrapper">
+            <div class="wrapper style1">
                 <div class="inner">
 
-                    <!-- Logo -->
-                    <h1><a href="index.html" id="logo">SOLU<strong>BUDDY</strong></a></h1>
-
-                    <!-- Nav -->
-                    <nav id="nav">
-                        <ul>
-<!--                            <li><a href="educational-links.html">Educational Links</a></li> -->
-<!--                            <li><a href="saved-solutions.html">Saved Solutions</a></li> -->
-<!--                            <li><a href="#">Account</a></li> -->
-                            <li id="logoutButton"><a href="#">Log Out</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-        </div>
-    </div>
-
-    <!-- Main Wrapper -->
-    <div id="main-wrapper">
-        <div class="wrapper style1">
-            <div class="inner">
-
-                <!-- Site Navigation Buttons -->
-                <section class="container box feature1">
-                    <div class="row">
-                        <div class="12u">
-                            <!-- Site Tutorial Display -->
-                            <div id="main-tutorial">
-                                <h3>Welcome to Solubuddy!</h3>
-                                <p>This website has been designed to help you in creating solutions, dilutions, and calibration standards. To use this site you will select which type of activity
-                                    you wish to perform, then use the buttons at the top of the corresponding page to select the details of the activity. Instructions for perfoming the activity
-                                    will appear on the right hand side of the screen to help guide you through the process. After submitting your entries and calculation results a final message will
-                                    alert you to the accuracy of your calculations. Be aware that the significant figure of our calculations are based on that of the values you enter into an activity.
-                                    Submitting an answer with the wrong number of significant figures can result in your answer being marked as wrong.</p>
-                                <p>The menu items at the top of the page will help you to navigate to different areas of the site such as educational videos and calculations you have saved</p>
-                                <input type="checkbox" id="tutorial-box" /><span>Don't show again</span> <!--changed wording here. I cant fix the bug where a user can hit get started and be redirected back.-->
-                                <br><br>
-                                <input type="button" class="alt" value="Get Started" onclick="closeTutorial()"/>
+                    <!-- Site Navigation Buttons -->
+                    <section class="container box feature1">
+                        <div class="row">
+                            <div class="12u">
+                                <!-- Site Tutorial Display -->
+                                <div id="main-tutorial">
+                                    <h3>Welcome to Solubuddy!</h3>
+                                    <p>This website has been designed to help you in creating solutions, dilutions, and calibration standards. To use this site you will select which type of activity you wish to perform, then use the buttons at the top of
+                                        the corresponding page to select the details of the activity. Instructions for perfoming the activity will appear on the right hand side of the screen to help guide you through the process. After submitting your
+                                        entries and calculation results a final message will alert you to the accuracy of your calculations. Be aware that the significant figure of our calculations are based on that of the values you enter into an activity.
+                                        Submitting an answer with the wrong number of significant figures can result in your answer being marked as wrong.</p>
+                                    <p>The menu items at the top of the page will help you to navigate to different areas of the site such as educational videos and calculations you have saved</p>
+                                    <input type="checkbox" id="tutorial-box" /><span>Don't show again</span>
+                                    <!--changed wording here. I cant fix the bug where a user can hit get started and be redirected back.-->
+                                    <br><br>
+                                    <input type="button" class="alt" value="Get Started" onclick="closeTutorial()" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Wrapper -->
-
-    <footer id="footer" class="container">
-        <div class="row">
-            <div class="12u">
-                <div id="copyright">
-                    <ul class="menu">
-                        <li>&copy; Dr David Kreller. All rights reserved</li>
-                        <li>Design: <a href="http://ceit.georgiasouthern.edu/cs/">Georgia Southern University Computer Science</a></li>
-                    </ul>
+                    </section>
                 </div>
             </div>
         </div>
-    </footer>
-</div>
 
-<!-- Scripts -->
+        <!-- Footer Wrapper -->
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.dropotron.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/skel-viewport.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/login.js"></script> <!--login script-->
-<script src="js/tutorialController.js"></script>
+        <footer id="footer" class="container">
+            <div class="row">
+                <div class="12u">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>&copy; Dr David Kreller. All rights reserved</li>
+                            <li>Design: <a href="http://ceit.georgiasouthern.edu/cs/">Georgia Southern University Computer Science</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/skel-viewport.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+    <!--login script-->
+    <script src="js/tutorialController.js"></script>
 
 </body>
 
