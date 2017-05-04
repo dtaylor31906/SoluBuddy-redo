@@ -67,8 +67,10 @@ $(document).ready(function ()
         event.preventDefault();
         serialDilutionSubmit(serialDilution.serializeArray());
     });
+/*  TESTING USAGE
     testSingleDilution();
-    testSerialDilution()
+    testSerialDilution();
+*/
 
 });
 
